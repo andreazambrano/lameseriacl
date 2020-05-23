@@ -27,7 +27,7 @@ export class AppComponent implements OnInit {
 
       if (this.swUpdate.isEnabled) {
             this.swUpdate.available.subscribe(() => {
-                if(confirm("Frutme tiene nuevas mejoras. desea cargar esta nueva versión?")) {
+                if(confirm("lameseria tiene nuevas mejoras. desea cargar esta nueva versión?")) {
                     window.location.reload();
                 }
             });
