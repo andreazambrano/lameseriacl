@@ -23,7 +23,8 @@ export class TestappComponent implements OnInit {
   public tixs:TixInterface;
 public seted=false;
    loadAPI = null;  
-  
+    
+
    url= "assets/assetslameseria/plugins/jquery-1.12.4.min.js";
    url2= "assets/assetslameseria/plugins/owl-carousel/owl.carousel.min.js";
     url2b= "assets/assetslameseria/plugins/popper.min.js";
@@ -31,7 +32,12 @@ public seted=false;
 
 
    url3= "assets/assetslameseria/plugins/slick/slick/slick.min.js";
+    url3b= "assets/assetslameseria/plugins/jquery-bar-rating/dist/jquery.barrating.min.js";
+
+
    url4= "assets/assetslameseria/plugins/slick-animation.min.js";
+
+   url4b= "assets/assetslameseria/plugins/lightGallery-master/dist/js/lightgallery-all.min.js";
    url5= "assets/assetslameseria/plugins/jquery-ui/jquery-ui.min.js";
    url6= "assets/assetslameseria/plugins/sticky-sidebar/dist/sticky-sidebar.min.js";
 
@@ -52,9 +58,10 @@ public seted=false;
             this.loadScript();
             this.loadScript2();
             this.loadScript2b();
-
             this.loadScript3();
+            this.loadScript3b();
             this.loadScript4();
+            this.loadScript4b();
             this.loadScript5();
             this.loadScript6();
             this.loadScript7();
@@ -96,10 +103,26 @@ public seted=false;
       node.charset = "utf-8";
       document.getElementsByTagName("head")[0].appendChild(node);
     }
+        public loadScript3b() {
+      let node = document.createElement("script");
+      node.src = this.url3b;
+      node.type = "text/javascript";
+      node.async = true;
+      node.charset = "utf-8";
+      document.getElementsByTagName("head")[0].appendChild(node);
+    }
 
     public loadScript4() {
       let node = document.createElement("script");
       node.src = this.url4;
+      node.type = "text/javascript";
+      node.async = true;
+      node.charset = "utf-8";
+      document.getElementsByTagName("head")[0].appendChild(node);
+    }
+    public loadScript4b() {
+      let node = document.createElement("script");
+      node.src = this.url4b;
       node.type = "text/javascript";
       node.async = true;
       node.charset = "utf-8";
