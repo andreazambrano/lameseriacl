@@ -9,4 +9,8 @@ export { ShopComponent } from "./shop/shop.component";
 // export { FruittopbarComponent } from "./fruittopbar/fruittopbar.component";
 // export { FruitcartComponent } from "./fruitcart/fruitcart.component";
 export { FooterComponent } from "./footer/footer.component";
+export { ProductdetailComponent } from "./productdetail/productdetail.component";
+export { CheckoutComponent } from "./checkout/checkout.component";
+export { AccountComponent } from "./account/account.component";
+export { CartComponent } from "./cart/cart.component";
 export { PagoComponent } from "./pago/pago.component";

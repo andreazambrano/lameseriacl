@@ -51,6 +51,10 @@ import { PagoComponent } from './components/pago/pago.component';
 import { TopbarComponent } from './components/topbar/topbar.component';
 import { ShopComponent } from './components/shop/shop.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { ProductdetailComponent } from './components/productdetail/productdetail.component';
+import { CartComponent } from './components/cart/cart.component';
+import { AccountComponent } from './components/account/account.component';
+import { CheckoutComponent } from './components/checkout/checkout.component';
 
 @NgModule({
   declarations: [
@@ -67,6 +71,10 @@ import { FooterComponent } from './components/footer/footer.component';
     TopbarComponent,
     ShopComponent,
     FooterComponent,
+    ProductdetailComponent,
+    CartComponent,
+    AccountComponent,
+    CheckoutComponent,
   ],
   imports: [
     BrowserModule,

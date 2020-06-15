@@ -5,12 +5,12 @@
       </div>
       <div class="navigation__content">
         <div class="navigation__actions">
-          <div class="ps-dropdown"><a href="index.html#">USD</a>
+         <!--  <div class="ps-dropdown"><a href="index.html#">USD</a>
             <ul class="ps-dropdown-menu">
               <li><a href="index.html#">USD</a></li>
               <li><a href="index.html#">CLP</a></li>
             </ul>
-          </div>
+          </div> -->
           <div class="header__actions"><a class="ps-search-btn" href="index.html#"><i class="pe-7s-search"></i></a>
         
           </div>
@@ -70,18 +70,18 @@
           </div>
           <div class="ps-section__content">
             <div class="row">
-              <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-12 ">
-                <div class="ps-product">
-                  <div class="ps-product__thumbnail"><a class="ps-product__overlay" href="product-standard.html"></a><a class="ps-product__img" href="product-standard.html"><img src="assets/assetslameseria/img/product/trend-1-1.jpg" alt=""/></a><a class="ps-product__img-alt" href="product-standard.html"><img src="assets/assetslameseria/img/product/trend-1-2.jpg" alt=""/></a><a class="ps-product__favorite" href="index.html#"><i class="fa fa-heart-o"></i></a>
+              <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-12 " *ngFor="let tix of tixs" >
+                <div class="ps-product" routerLink="/prasiproductdetail/{{tix.id}}">
+                  <div class="ps-product__thumbnail"><a class="ps-product__overlay" href="product-standard.html"></a><a class="ps-product__img" href="product-standard.html"><img src="{{tix.images[0]}}" alt=""/></a><a class="ps-product__img-alt" href="product-standard.html"><img src="{{tix.images[1]}}" alt=""/></a><a class="ps-product__favorite" href="index.html#"><i class="fa fa-heart-o"></i></a>
                     <ul class="ps-product__actions">
                       <li><a href="product-standard.html">Quick Shop</a></li>
-                      <li><a href="product-standard.html">Add to cart</a></li>
+                      <li><a routerLink="productdetail">Agregar al carrito</a></li>
                     </ul>
                     <p class="ps-product__size">S, M, L</p>
                   </div>
                   <div class="ps-product__content">
-                    <div class="ps-product__meta"><a href="shop-2-column.html"></a></div><a class="ps-product__title" href="product-standard.html">Cyan Boheme</a>
-                    <p class="ps-product__price"> $85.00</p>
+                    <div class="ps-product__meta"><a href="shop-2-column.html"></a></div><a class="ps-product__title" href="product-standard.html">{{tix.productName}}</a>
+                    <p class="ps-product__price"> CLP {{tix.globalPrice}}</p>
                     <div class="ps-product__color">
                       <div class="ps-radio ps-radio--color ps-radio--inline color-1">
                         <input class="form-control" type="radio" id="color-020" name="color-0"/>
@@ -99,12 +99,12 @@
                   </div>
                 </div>
               </div>
-              <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-12 ">
+             <!--  <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-12 ">
                 <div class="ps-product">
                   <div class="ps-product__thumbnail"><a class="ps-product__overlay" href="product-standard.html"></a><a class="ps-product__img" href="product-standard.html"><img src="assets/assetslameseria/img/product/best-4-1.jpg" alt=""/></a><a class="ps-product__img-alt" href="product-standard.html"><img src="assets/assetslameseria/img/product/trend-4-2.jpg" alt=""/></a><a class="ps-product__favorite" href="index.html#"><i class="fa fa-heart-o"></i></a>
                     <ul class="ps-product__actions">
                       <li><a href="product-standard.html">Quick Shop</a></li>
-                      <li><a href="product-standard.html">Add to cart</a></li>
+                      <li><a href="product-standard.html">Agregar al carrito</a></li>
                     </ul>
                     <p class="ps-product__size">S, M, L</p>
                   </div>
@@ -119,7 +119,7 @@
                   <div class="ps-product__thumbnail"><a class="ps-product__overlay" href="product-standard.html"></a><a class="ps-product__img" href="product-standard.html"><img src="assets/assetslameseria/img/product/best-6-1.jpg" alt=""/></a><a class="ps-product__img-alt" href="product-standard.html"><img src="assets/assetslameseria/img/product/best-6-2.jpg" alt=""/></a><a class="ps-product__favorite" href="index.html#"><i class="fa fa-heart-o"></i></a>
                     <ul class="ps-product__actions">
                       <li><a href="product-standard.html">Quick Shop</a></li>
-                      <li><a href="product-standard.html">Add to cart</a></li>
+                      <li><a href="product-standard.html">Agregar al carrito</a></li>
                     </ul>
                     <p class="ps-product__size">S, M, L</p>
                   </div>
@@ -148,7 +148,7 @@
                   <div class="ps-product__thumbnail"><a class="ps-product__overlay" href="product-standard.html"></a><span class="ps-product__badge disabled"><i>Sold Out</i></span><a class="ps-product__img" href="product-standard.html"><img src="assets/assetslameseria/img/product/trend-2-1.jpg" alt=""/></a><a class="ps-product__img-alt" href="product-standard.html"><img src="assets/assetslameseria/img/product/trend-2-2.jpg" alt=""/></a><a class="ps-product__favorite" href="index.html#"><i class="fa fa-heart-o"></i></a>
                     <ul class="ps-product__actions">
                       <li><a href="product-standard.html">Quick Shop</a></li>
-                      <li><a href="product-standard.html">Add to cart</a></li>
+                      <li><a href="product-standard.html">Agregar al carrito</a></li>
                     </ul>
                     <p class="ps-product__size">S, M, L</p>
                   </div>
@@ -163,7 +163,7 @@
                   <div class="ps-product__thumbnail"><a class="ps-product__overlay" href="product-standard.html"></a><span class="ps-product__badge"><i> - 14.3%</i></span><a class="ps-product__img" href="product-standard.html"><img src="assets/assetslameseria/img/product/trend-3-1.jpg" alt=""/></a><a class="ps-product__img-alt" href="product-standard.html"><img src="assets/assetslameseria/img/product/best-3-2.jpg" alt=""/></a><a class="ps-product__favorite" href="index.html#"><i class="fa fa-heart-o"></i></a>
                     <ul class="ps-product__actions">
                       <li><a href="product-standard.html">Quick Shop</a></li>
-                      <li><a href="product-standard.html">Add to cart</a></li>
+                      <li><a href="product-standard.html">Agregar al carrito</a></li>
                     </ul>
                     <p class="ps-product__size">S, M, L</p>
                   </div>
@@ -192,7 +192,7 @@
                   <div class="ps-product__thumbnail"><a class="ps-product__overlay" href="product-standard.html"></a><a class="ps-product__img" href="product-standard.html"><img src="assets/assetslameseria/img/product/trend-4-1.jpg" alt=""/></a><a class="ps-product__img-alt" href="product-standard.html"><img src="assets/assetslameseria/img/product/trend-4-1b.jpg" alt=""/></a><a class="ps-product__favorite" href="index.html#"><i class="fa fa-heart-o"></i></a>
                     <ul class="ps-product__actions">
                       <li><a href="product-standard.html">Quick Shop</a></li>
-                      <li><a href="product-standard.html">Add to cart</a></li>
+                      <li><a href="product-standard.html">Agregar al carrito</a></li>
                     </ul>
                     <p class="ps-product__size">S, M, L</p>
                   </div>
@@ -217,7 +217,7 @@
                   <div class="ps-product__thumbnail"><a class="ps-product__overlay" href="product-standard.html"></a><span class="ps-product__badge"><i> - 14.3%</i></span><a class="ps-product__img" href="product-standard.html"><img src="assets/assetslameseria/img/product/trend-5-1.jpg" alt=""/></a><a class="ps-product__img-alt" href="product-standard.html"><img src="assets/assetslameseria/img/product/trend-5-2.jpg" alt=""/></a><a class="ps-product__favorite" href="index.html#"><i class="fa fa-heart-o"></i></a>
                     <ul class="ps-product__actions">
                       <li><a href="product-standard.html">Quick Shop</a></li>
-                      <li><a href="product-standard.html">Add to cart</a></li>
+                      <li><a href="product-standard.html">Agregar al carrito</a></li>
                     </ul>
                     <p class="ps-product__size">S, M, L</p>
                   </div>
@@ -232,7 +232,7 @@
                   <div class="ps-product__thumbnail"><a class="ps-product__overlay" href="product-standard.html"></a><a class="ps-product__img" href="product-standard.html"><img src="assets/assetslameseria/img/product/best-3-1.jpg" alt=""/></a><a class="ps-product__img-alt" href="product-standard.html"><img src="assets/assetslameseria/img/product/best-3-1b.jpg" alt=""/></a><a class="ps-product__favorite" href="index.html#"><i class="fa fa-heart-o"></i></a>
                     <ul class="ps-product__actions">
                       <li><a href="product-standard.html">Quick Shop</a></li>
-                      <li><a href="product-standard.html">Add to cart</a></li>
+                      <li><a href="product-standard.html">Agregar al carrito</a></li>
                     </ul>
                     <p class="ps-product__size">S, M, L</p>
                   </div>
@@ -251,7 +251,7 @@
                     </div>
                   </div>
                 </div>
-              </div>
+              </div> -->
             </div>
           </div>
         </div>
@@ -314,7 +314,7 @@
                 <div class="ps-block--feature">
                   <div class="ps-block__left"><i class="pe-7s-car"></i></div>
                   <div class="ps-block__right">
-                    <p>FREE SHIPPING</p><small>Free shipping on all US order or order above $200</small>
+                    <p>ENVÍO A DOMICILIO</p><small>Envío gratis en todos los pedidos a CHILE</small>
                   </div>
                 </div>
               </div>
@@ -322,7 +322,7 @@
                 <div class="ps-block--feature">
                   <div class="ps-block__left"><i class="pe-7s-help2"></i></div>
                   <div class="ps-block__right">
-                    <p>SUPPORT 24/7</p><small>Contact us 24 hours a day, 7 days a week</small>
+                    <p>SOPORTE 24/7</p><small>Contáctenos las 24 horas del día, los 7 días de la semana.</small>
                   </div>
                 </div>
               </div>
@@ -330,7 +330,7 @@
                 <div class="ps-block--feature">
                   <div class="ps-block__left"><i class="pe-7s-refresh"></i></div>
                   <div class="ps-block__right">
-                    <p>30 DAYS RETURN</p><small>Simply return it within 30 days for an exchange.</small>
+                    <p>30 DÍAS DE DEVOLUCIÓN</p><small>Simplemente devuélvalo dentro de los 30 días para un cambio.</small>
                   </div>
                 </div>
               </div>
@@ -338,7 +338,7 @@
                 <div class="ps-block--feature">
                   <div class="ps-block__left"><i class="pe-7s-door-lock"></i></div>
                   <div class="ps-block__right">
-                    <p>100% PAYMENT SECURE</p><small>We ensure secure payment with PEV</small>
+                    <p>PAGO 100% SEGURO</p><small>Aseguramos los pagos con Transbanck</small>
                   </div>
                 </div>
               </div>
@@ -378,6 +378,6 @@
         </div>
       </div>
       <div class="ps-cart__footer">
-        <h4>SubTotal: <span>$60.00</span></h4><a class="ps-btn" href="shopping-cart.html">Ver carrito</a><a class="ps-btn" href="shopping-cart.html">Pagar</a>
+        <h4>SubTotal: <span>$60.00</span></h4><a class="ps-btn" routerLink="cart">Ver carrito</a><a class="ps-btn" href="shopping-cart.html">Pagar</a>
       </div>
     </div>

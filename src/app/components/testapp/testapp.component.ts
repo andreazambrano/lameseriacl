@@ -1,4 +1,9 @@
+import { ActivatedRoute, Params} from '@angular/router';
 import { Component, OnInit } from '@angular/core';
+import { DataApiService} from '../../services/data-api.service';
+import { Location } from '@angular/common';
+import { Router } from '@angular/router';
+import { TixInterface } from '../../models/tix-interface'; 
 import { UserWService } from "../../services/user-w.service";
 
 @Component({
@@ -9,8 +14,14 @@ import { UserWService } from "../../services/user-w.service";
 export class TestappComponent implements OnInit {
 
   constructor(
-     public _uw:UserWService
+       private dataApi: DataApiService,
+    private location: Location,
+    private route:ActivatedRoute,
+    private router: Router, 
+    public _uw:UserWService
      ) { }
+  public tixs:TixInterface;
+public seted=false;
    loadAPI = null;  
   
    url= "assets/assetslameseria/plugins/jquery-1.12.4.min.js";
@@ -25,7 +36,15 @@ export class TestappComponent implements OnInit {
    url6= "assets/assetslameseria/plugins/sticky-sidebar/dist/sticky-sidebar.min.js";
 
    url7 = "assets/assetslameseria/js/main.js";
-   
+   getAllTixs(){
+        this.dataApi.getAllTixs().subscribe((res:any) => {
+      if (res[0] === undefined){
+        console.log("no");
+       }else{
+        this.tixs=res;            
+        }
+     });  
+    }
   ngOnInit() {
     // this._uw.tixPreview.quantity=1;
  if (this._uw.loaded==true){
@@ -42,6 +61,7 @@ export class TestappComponent implements OnInit {
           });
         }
         this._uw.loaded=true;
+        this.getAllTixs();
   }
       public loadScript() {
       let node = document.createElement("script");

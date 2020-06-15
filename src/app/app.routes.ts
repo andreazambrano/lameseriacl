@@ -3,6 +3,7 @@ import {
 	TestappComponent,
 	TopbarComponent,
 	ShopComponent,
+	ProductdetailComponent,
 	// FruitproductsComponent,
 	// FruitbannerComponent,
 	// FruitbannerboxComponent,
@@ -11,6 +12,9 @@ import {
 	// FruittopbarComponent,
 	// FruitcartComponent,
 	FooterComponent,
+	CartComponent,
+	AccountComponent,
+	CheckoutComponent,
 	PagoComponent
 
 	}from "./components/index.paginas";
@@ -21,6 +25,10 @@ const app_routes: Routes = [
 	{path:'',component:TestappComponent},
 	{path:'topbar',component:TopbarComponent},
 	{path:'shop',component:ShopComponent},
+	{path:'productdetail',component:ProductdetailComponent},
+	{path:'cart',component:CartComponent},
+	{path:'account',component:AccountComponent},
+	{path:'checkout',component:CheckoutComponent},
 	// {path:'fruittopbar',component:FruittopbarComponent},
 	// {path:'fruitproducts',component:FruitproductsComponent},
 	// {path:'fruitbanner',component:FruitbannerComponent},
