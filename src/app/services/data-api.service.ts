@@ -74,6 +74,12 @@ export class DataApiService {
 
 		// return this.http.get(url_api);
 	}
+		getTixById(id:string){
+		let indice = id;
+		const url_api=`https://db.lameseria.cl:3029/api/tixes/${indice}`;
+		this.tix = this.http.get(url_api);
+		return (this.tix);
+	}
 
 		// let indice = id;
 		// const url_api=`https://db.andesproadventures.com:3018/api/book/${indice}`;

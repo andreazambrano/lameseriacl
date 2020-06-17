@@ -71,18 +71,22 @@
           <div class="ps-section__content">
             <div class="row">
               <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-12 " *ngFor="let tix of tixs" >
-                <div class="ps-product" routerLink="/prasiproductdetail/{{tix.id}}">
-                  <div class="ps-product__thumbnail"><a class="ps-product__overlay" href="product-standard.html"></a><a class="ps-product__img" href="product-standard.html"><img src="{{tix.images[0]}}" alt=""/></a><a class="ps-product__img-alt" href="product-standard.html"><img src="{{tix.images[1]}}" alt=""/></a><a class="ps-product__favorite" href="index.html#"><i class="fa fa-heart-o"></i></a>
+                <div class="ps-product" routerLink="/productdetail/{{tix.id}}">
+                  <div class="ps-product__thumbnail"><a class="ps-product__overlay" ></a><a class="ps-product__img" ><img src="{{tix.images[0]}}" alt=""/></a><a class="ps-product__img-alt" ><img src="{{tix.images[1]}}" alt=""/></a><a class="ps-product__favorite" ><i class="fa fa-heart-o"></i></a>
                     <ul class="ps-product__actions">
-                      <li><a href="product-standard.html">Quick Shop</a></li>
-                      <li><a routerLink="productdetail">Agregar al carrito</a></li>
+                      <!-- <li><a href="product-standard.html">Quick Shop</a></li> -->
+                      <li><a routerLink="/productdetail/{{tix.id}}">Agregar al carrito</a></li>
                     </ul>
                     <p class="ps-product__size">S, M, L</p>
                   </div>
                   <div class="ps-product__content">
-                    <div class="ps-product__meta"><a href="shop-2-column.html"></a></div><a class="ps-product__title" href="product-standard.html">{{tix.productName}}</a>
+                    <div class="ps-product__meta">
+                      <a ></a>
+                    </div>
+
+                    <a class="ps-product__title" >{{tix.productName}}</a>
                     <p class="ps-product__price"> CLP {{tix.globalPrice}}</p>
-                    <div class="ps-product__color">
+                    <!-- <div class="ps-product__color">
                       <div class="ps-radio ps-radio--color ps-radio--inline color-1">
                         <input class="form-control" type="radio" id="color-020" name="color-0"/>
                         <label for="color-020"></label>
@@ -95,7 +99,7 @@
                         <input class="form-control" type="radio" id="color-064" name="color-0"/>
                         <label for="color-064"></label>
                       </div>
-                    </div>
+                    </div> -->
                   </div>
                 </div>
               </div>

@@ -9,136 +9,48 @@
       </div>
     </div>
     <div class="container">
-      <div class="ps-product--detail">
+      <div class="ps-product--detail" *ngIf="tix">
         <div class="ps-product__header">
           <div class="ps-product__thumbnail" data-vertical="true">
             <figure>
               <div class="ps-wrapper">
                 <div class="ps-product__gallery" data-arrow="true">
-                  <div class="item"><a href="img/product-detail/standard/1.jpg"><img src="img/product-detail/standard/1.jpg" alt=""></a></div>
-                  <div class="item"><a href="img/product-detail/standard/2.jpg"><img src="img/product-detail/standard/2.jpg" alt=""></a></div>
-                  <div class="item"><a href="img/product-detail/standard/3.jpg"><img src="img/product-detail/standard/3.jpg" alt=""></a></div>
-                  <div class="item"><a href="img/product-detail/standard/4.jpg"><img src="img/product-detail/standard/4.jpg" alt=""></a></div>
+
+                  <div class="item" *ngFor="let image of tix.images; index as f">
+                    <a href="{{tix.images[f]}}">
+                      <img src="{{tix.images[f]}}" alt="">
+                    </a>
+                  </div>
+
+         
                 </div>
-  <!--               <div class="ps-product__video ps-video"><a class="ps-btn ps-btn--outline ps-btn--black" href="https://www.youtube.com/watch?v=TlC18jAQgVw"><i class="pe-7s-play"></i> View Video</a></div> -->
+          
               </div>
             </figure>
             <div class="ps-product__variants" data-item="4" data-md="3" data-sm="3" data-arrow="false">
-              <div class="item"><img src="img/product-detail/standard/1.jpg" alt=""></div>
-              <div class="item"><img src="img/product-detail/standard/2.jpg" alt=""></div>
-              <div class="item"><img src="img/product-detail/standard/3.jpg" alt=""></div>
-              <div class="item"><img src="img/product-detail/standard/4.jpg" alt=""></div>
+              
+              <div class="item" *ngFor="let image of tix.images; index as f" ><img src="{{tix.images[f]}}" alt=""></div>
+
+   
             </div>
           </div>
           <div class="ps-product__info">
-            <h1>Analogue Resin Strap Watch</h1>
-            <h4 class="ps-product__price">$85.00</h4>
+            <h1>{{tix.productName}}</h1>
+            <h4 class="ps-product__price">CLP {{tix.globalPrice}}</h4>
             <div class="ps-product__desc">
-              <p>Go sporty this summer with this vintage navy and white striped v-neck t-shirt from the Nike. Perfect for pairing with denim and white kicks for a stylish sporty vibe.</p>
+              <p>{{tix.description}}</p>
             </div>
             <div class="ps-product__shopping">
               <div class="form-group--number">
                 <button class="up"><i class="fa fa-plus"></i></button>
                 <button class="down"><i class="fa fa-minus"></i></button>
                 <input class="form-control" type="text" placeholder="1">
-              </div><a class="ps-btn" href="product-standard.html#">Add to cart</a><a class="ps-product__favorite" href="product-standard.html#"><i class="fa fa-heart-o"></i></a>
+              </div><a class="ps-btn" href="product-standard.html#">Agregar al carro</a><a class="ps-product__favorite" href="product-standard.html#"><i class="fa fa-heart-o"></i></a>
             </div>
-            <div class="ps-product__links"><a class="ps-modal-link" href="product-standard.html#">Size Guide</a><a class="ps-modal-link" href="product-standard.html#">Delivery & Return</a></div>
-            <div class="ps-product__specification">
-              <p><strong>Categories:</strong><a href="shop-4-column.html">Women</a>,<a href="shop-4-column.html"> Top</a>,<a href="shop-4-column.html"> Accessories</a>,<a href="shop-4-column.html"> Jewellery</a></p>
-              <p><strong>Tags:</strong><a href="shop-4-column.html">Dress</a>,<a href="shop-4-column.html"> Top</a>,<a href="shop-4-column.html"> Women</a></p>
-            </div>
-            <div class="ps-product__sharing"><a href="product-standard.html#"><i class="fa fa-facebook"></i></a><a href="product-standard.html#"><i class="fa fa-twitter"></i></a><a href="product-standard.html#"><i class="fa fa-dribbble"></i></a><a href="product-standard.html#"><i class="fa fa-instagram"></i></a><a href="product-standard.html#"><i class="fa fa-behance"></i></a><a href="product-standard.html#"><i class="fa fa-linkedin"></i></a></div>
+   
           </div>
         </div>
-        <!-- <div class="ps-product__content ps-tab-root">
-          <ul class="ps-tab-list">
-            <li class="active"><a href="product-standard.html#tab-1">Description</a></li>
-            <li><a href="product-standard.html#tab-2">Addition Information</a></li>
-            <li><a href="product-standard.html#tab-3">Review (0)</a></li>
-          </ul>
-          <div class="ps-tabs">
-            <div class="ps-tab active" role="tabpanel" id="tab-1">
-              <p>Go sporty this summer with this vintage navy and white striped v-neck t-shirt from the Abercrombie & Fitch. Perfect for pairing with denim and white kicks for a stylish sporty vibe. Will fit a UK 8-10, model shown is a UK 8 and 5’5. !!</p>
-              <p>Typography is the work of typesetters, compositors, typographers, graphic designers, art directors, manga artists, comic book artists, graffiti artists, and now—anyone who arranges words, letters, numbers, and symbols for publication, display, or distribution—from clerical workers and newsletter writers to anyone self-publishing materials.</p><img src="img/product-detail/watch.jpg" alt="">
-            </div>
-            <div class="ps-tab" id="tab-2">
-              <div class="table-responsive">
-                <table class="table ps-table">
-                  <tbody>
-                    <tr>
-                      <td>Brand</td>
-                      <td>H&M, Mango, Nike, Zara</td>
-                    </tr>
-                    <tr>
-                      <td>Color</td>
-                      <td>Black, Brown, White</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-            <div class="ps-tab" id="tab-3">
-              <div class="ps-block--comment ps-block--comment-review">
-                <div class="ps-block__thumbnail"><img src="img/user/3.jpg" alt=""></div>
-                <div class="ps-block__content">
-                  <h5>Martin Bailey</h5>
-                  <select class="ps-rating">
-                    <option value="1">1</option>
-                    <option value="1">2</option>
-                    <option value="1">3</option>
-                    <option value="1">4</option>
-                    <option value="2">5</option>
-                  </select>
-                  <p>Aenean sit amet odio est. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Mauris quis est lobortis odio dignissim rutrum. Pellentesque blandit lacinia diam, a tincidunt felis tempus eget.</p>
-                </div>
-              </div>
-              <div class="ps-block--comment ps-block--comment-review">
-                <div class="ps-block__thumbnail"><img src="img/user/1.jpg" alt=""></div>
-                <div class="ps-block__content">
-                  <h5>San Baleik</h5>
-                  <select class="ps-rating">
-                    <option value="1">1</option>
-                    <option value="1">2</option>
-                    <option value="1">3</option>
-                    <option value="1">4</option>
-                    <option value="2">5</option>
-                  </select>
-                  <p>Aenean sit amet odio est. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Mauris quis est lobortis odio dignissim rutrum. Pellentesque blandit lacinia diam, a tincidunt felis tempus eget.</p>
-                </div>
-              </div>
-              <form class="ps-form--product-review" action="http://nouthemes.net/html/claue/do_action" method="post">
-                <h4>BE THE FIRST TO REVIEW “ANALOGUE RESIN STRAP WATCH”</h4>
-                <p>Your email address will not be published. Required fields are marked *</p>
-                <div class="form-group">
-                  <label>Your rating</label>
-                  <select class="ps-rating">
-                    <option value="1">1</option>
-                    <option value="1">2</option>
-                    <option value="1">3</option>
-                    <option value="1">4</option>
-                    <option value="5">5</option>
-                  </select>
-                </div>
-                <div class="form-group">
-                  <label>Your Review:</label>
-                  <textarea class="form-control" rows="6"></textarea>
-                </div>
-                <div class="form-group">
-                  <label>Name:<sup>*</sup></label>
-                  <input class="form-control" type="text" placeholder="">
-                </div>
-                <div class="form-group">
-                  <label>Email:<sup>*</sup></label>
-                  <input class="form-control" type="email" placeholder="">
-                </div>
-                <div class="form-group">
-                  <button class="ps-btn ps-btn--outline ps-btn--black">Submit</button>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div> -->
+  
       </div>
     </div>
     <div id="cart-sticky">
@@ -147,169 +59,4 @@
         <button class="down"><i class="fa fa-minus"></i></button>
         <input class="form-control" type="text" placeholder="1">
       </div><a class="ps-btn" href="product-standard.html#">Add to cart</a>
-    </div>
-    <div class="ps-section ps-related-products">
-      <div class="container">
-        <div class="ps-section__header">
-          <h3>PRODUCTOS RELACIONADOS</h3>
-        </div>
-        <div class="ps-section__content">
-          <div class="ps-carousel--nav owl-slider" data-owl-auto="true" data-owl-loop="true" data-owl-speed="5000" data-owl-gap="30" data-owl-nav="true" data-owl-dots="true" data-owl-item="4" data-owl-item-xs="1" data-owl-item-sm="2" data-owl-item-md="3" data-owl-item-lg="4" data-owl-duration="1000" data-owl-mousedrag="on">
-            <div class="ps-product">
-              <div class="ps-product__thumbnail"><a class="ps-product__overlay" href="product-standard.html"></a><a class="ps-product__img" href="product-standard.html"><img src="img/product/trend-1-1.jpg" alt=""/></a><a class="ps-product__img-alt" href="product-standard.html"><img src="img/product/trend-1-2.jpg" alt=""/></a><a class="ps-product__favorite" href="product-standard.html#"><i class="fa fa-heart-o"></i></a>
-                <ul class="ps-product__actions">
-                  <li><a href="product-standard.html">Quick Shop</a></li>
-                  <li><a href="product-standard.html">Add to cart</a></li>
-                </ul>
-                <p class="ps-product__size">S, M, L</p>
-              </div>
-              <div class="ps-product__content">
-                <div class="ps-product__meta"><a href="shop-2-column.html"></a></div><a class="ps-product__title" href="product-standard.html">Cyan Boheme</a>
-                <p class="ps-product__price"> $85.00</p>
-                <div class="ps-product__color">
-                  <div class="ps-radio ps-radio--color ps-radio--inline color-1">
-                    <input class="form-control" type="radio" id="color-undefined18" name="color-undefined"/>
-                    <label for="color-undefined18"></label>
-                  </div>
-                  <div class="ps-radio ps-radio--color ps-radio--inline color-2">
-                    <input class="form-control" type="radio" id="color-undefined26" name="color-undefined"/>
-                    <label for="color-undefined26"></label>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="ps-product">
-              <div class="ps-product__thumbnail"><a class="ps-product__overlay" href="product-standard.html"></a><a class="ps-product__img" href="product-standard.html"><img src="img/product/best-4-1.jpg" alt=""/></a><a class="ps-product__img-alt" href="product-standard.html"><img src="img/product/trend-4-2.jpg" alt=""/></a><a class="ps-product__favorite" href="product-standard.html#"><i class="fa fa-heart-o"></i></a>
-                <ul class="ps-product__actions">
-                  <li><a href="product-standard.html">Quick Shop</a></li>
-                  <li><a href="product-standard.html">Add to cart</a></li>
-                </ul>
-                <p class="ps-product__size">S, M, L</p>
-              </div>
-              <div class="ps-product__content">
-                <div class="ps-product__meta"><a href="shop-2-column.html"></a></div><a class="ps-product__title" href="product-standard.html">Calvin Klein Logo Sweatpants</a>
-                <p class="ps-product__price"> $36.00</p>
-              </div>
-            </div>
-            <div class="ps-product">
-              <div class="ps-product__thumbnail"><a class="ps-product__overlay" href="product-standard.html"></a><a class="ps-product__img" href="product-standard.html"><img src="img/product/best-6-1.jpg" alt=""/></a><a class="ps-product__img-alt" href="product-standard.html"><img src="img/product/best-6-2.jpg" alt=""/></a><a class="ps-product__favorite" href="product-standard.html#"><i class="fa fa-heart-o"></i></a>
-                <ul class="ps-product__actions">
-                  <li><a href="product-standard.html">Quick Shop</a></li>
-                  <li><a href="product-standard.html">Add to cart</a></li>
-                </ul>
-                <p class="ps-product__size">S, M, L</p>
-              </div>
-              <div class="ps-product__content">
-                <div class="ps-product__meta"><a href="shop-2-column.html"></a></div><a class="ps-product__title" href="product-standard.html">Cuffed Beanie</a>
-                <p class="ps-product__price"> $45.00 – $53.00</p>
-                <div class="ps-product__color">
-                  <div class="ps-radio ps-radio--color ps-radio--inline color-1">
-                    <input class="form-control" type="radio" id="color-undefined93" name="color-undefined"/>
-                    <label for="color-undefined93"></label>
-                  </div>
-                  <div class="ps-radio ps-radio--color ps-radio--inline color-2">
-                    <input class="form-control" type="radio" id="color-undefined53" name="color-undefined"/>
-                    <label for="color-undefined53"></label>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="ps-product">
-              <div class="ps-product__thumbnail"><a class="ps-product__overlay" href="product-standard.html"></a><span class="ps-product__badge disabled"><i>Sold Out</i></span><a class="ps-product__img" href="product-standard.html"><img src="img/product/trend-2-1.jpg" alt=""/></a><a class="ps-product__img-alt" href="product-standard.html"><img src="img/product/trend-2-2.jpg" alt=""/></a><a class="ps-product__favorite" href="product-standard.html#"><i class="fa fa-heart-o"></i></a>
-                <ul class="ps-product__actions">
-                  <li><a href="product-standard.html">Quick Shop</a></li>
-                  <li><a href="product-standard.html">Add to cart</a></li>
-                </ul>
-                <p class="ps-product__size">S, M, L</p>
-              </div>
-              <div class="ps-product__content">
-                <div class="ps-product__meta"><a href="shop-2-column.html"></a></div><a class="ps-product__title" href="product-standard.html">Short Sleeved Hoodie With Step Hem</a>
-                <p class="ps-product__price"> $35.00</p>
-              </div>
-            </div>
-            <div class="ps-product">
-              <div class="ps-product__thumbnail"><a class="ps-product__overlay" href="product-standard.html"></a><span class="ps-product__badge"><i> - 14.3%</i></span><a class="ps-product__img" href="product-standard.html"><img src="img/product/trend-3-1.jpg" alt=""/></a><a class="ps-product__img-alt" href="product-standard.html"><img src="img/product/best-3-2.jpg" alt=""/></a><a class="ps-product__favorite" href="product-standard.html#"><i class="fa fa-heart-o"></i></a>
-                <ul class="ps-product__actions">
-                  <li><a href="product-standard.html">Quick Shop</a></li>
-                  <li><a href="product-standard.html">Add to cart</a></li>
-                </ul>
-                <p class="ps-product__size">S, M, L</p>
-              </div>
-              <div class="ps-product__content">
-                <div class="ps-product__meta"><a href="shop-2-column.html"></a></div><a class="ps-product__title" href="product-standard.html">Woleen Tee</a>
-                <p class="ps-product__price sale"> <del>$35.00</del>$30.00</p>
-                <div class="ps-product__color">
-                  <div class="ps-radio ps-radio--color ps-radio--inline color-1">
-                    <input class="form-control" type="radio" id="color-undefined33" name="color-undefined"/>
-                    <label for="color-undefined33"></label>
-                  </div>
-                  <div class="ps-radio ps-radio--color ps-radio--inline color-2">
-                    <input class="form-control" type="radio" id="color-undefined20" name="color-undefined"/>
-                    <label for="color-undefined20"></label>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="ps-product">
-              <div class="ps-product__thumbnail"><a class="ps-product__overlay" href="product-standard.html"></a><a class="ps-product__img" href="product-standard.html"><img src="img/product/trend-4-1.jpg" alt=""/></a><a class="ps-product__img-alt" href="product-standard.html"><img src="img/product/trend-4-2.jpg" alt=""/></a><a class="ps-product__favorite" href="product-standard.html#"><i class="fa fa-heart-o"></i></a>
-                <ul class="ps-product__actions">
-                  <li><a href="product-standard.html">Quick Shop</a></li>
-                  <li><a href="product-standard.html">Add to cart</a></li>
-                </ul>
-                <p class="ps-product__size">S, M, L</p>
-              </div>
-              <div class="ps-product__content">
-                <div class="ps-product__meta"><a href="shop-2-column.html"></a></div><a class="ps-product__title" href="product-standard.html">Grey Beanie</a>
-                <p class="ps-product__price"> $15.00</p>
-                <div class="ps-product__color">
-                  <div class="ps-radio ps-radio--color ps-radio--inline color-1">
-                    <input class="form-control" type="radio" id="color-undefined8" name="color-undefined"/>
-                    <label for="color-undefined8"></label>
-                  </div>
-                  <div class="ps-radio ps-radio--color ps-radio--inline color-2">
-                    <input class="form-control" type="radio" id="color-undefined85" name="color-undefined"/>
-                    <label for="color-undefined85"></label>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="ps-product">
-              <div class="ps-product__thumbnail"><a class="ps-product__overlay" href="product-standard.html"></a><span class="ps-product__badge"><i> - 14.3%</i></span><a class="ps-product__img" href="product-standard.html"><img src="img/product/trend-5-1.jpg" alt=""/></a><a class="ps-product__img-alt" href="product-standard.html"><img src="img/product/trend-5-2.jpg" alt=""/></a><a class="ps-product__favorite" href="product-standard.html#"><i class="fa fa-heart-o"></i></a>
-                <ul class="ps-product__actions">
-                  <li><a href="product-standard.html">Quick Shop</a></li>
-                  <li><a href="product-standard.html">Add to cart</a></li>
-                </ul>
-                <p class="ps-product__size">S, M, L</p>
-              </div>
-              <div class="ps-product__content">
-                <div class="ps-product__meta"><a href="shop-2-column.html"></a></div><a class="ps-product__title" href="product-standard.html">Pink Leather Watch</a>
-                <p class="ps-product__price sale"> <del>$35.00</del>$30.00</p>
-              </div>
-            </div>
-            <div class="ps-product">
-              <div class="ps-product__thumbnail"><a class="ps-product__overlay" href="product-standard.html"></a><a class="ps-product__img" href="product-standard.html"><img src="img/product/best-3-1.jpg" alt=""/></a><a class="ps-product__img-alt" href="product-standard.html"><img src="img/product/best-3-2.jpg" alt=""/></a><a class="ps-product__favorite" href="product-standard.html#"><i class="fa fa-heart-o"></i></a>
-                <ul class="ps-product__actions">
-                  <li><a href="product-standard.html">Quick Shop</a></li>
-                  <li><a href="product-standard.html">Add to cart</a></li>
-                </ul>
-                <p class="ps-product__size">S, M, L</p>
-              </div>
-              <div class="ps-product__content">
-                <div class="ps-product__meta"><a href="shop-2-column.html"></a></div><a class="ps-product__title" href="product-standard.html">Brown Sneaker Shoest</a>
-                <p class="ps-product__price"> $45.00 – $53.00</p>
-                <div class="ps-product__color">
-                  <div class="ps-radio ps-radio--color ps-radio--inline color-1">
-                    <input class="form-control" type="radio" id="color-undefined61" name="color-undefined"/>
-                    <label for="color-undefined61"></label>
-                  </div>
-                  <div class="ps-radio ps-radio--color ps-radio--inline color-2">
-                    <input class="form-control" type="radio" id="color-undefined3" name="color-undefined"/>
-                    <label for="color-undefined3"></label>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>

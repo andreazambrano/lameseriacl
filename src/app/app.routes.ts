@@ -25,7 +25,7 @@ const app_routes: Routes = [
 	{path:'',component:TestappComponent},
 	{path:'topbar',component:TopbarComponent},
 	{path:'shop',component:ShopComponent},
-	{path:'productdetail',component:ProductdetailComponent},
+	{path:'productdetail/:id',component:ProductdetailComponent},
 	{path:'cart',component:CartComponent},
 	{path:'account',component:AccountComponent},
 	{path:'checkout',component:CheckoutComponent},
