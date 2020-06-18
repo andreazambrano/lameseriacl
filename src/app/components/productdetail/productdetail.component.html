@@ -2,14 +2,14 @@
    <div class="ps-breadcrumb">
       <div class="container-fluid">
         <ul class="breadcrumb">
-          <li><a href="shop-4-column.html">Todos los productos</a></li>
+          <li><a routerLink="/products">Todos los productos</a></li>
        <!--    <li><a href="shop-4-column.html">Jewellery</a></li> -->
-          <li>Analogue Resin Strap Watch</li>
+          <li *ngIf="tix">{{tix.productName}}</li>
         </ul>
       </div>
     </div>
-    <div class="container">
-      <div class="ps-product--detail" *ngIf="tix">
+    <div class="container"  *ngIf="tix">
+      <div class="ps-product--detail">
         <div class="ps-product__header">
           <div class="ps-product__thumbnail" data-vertical="true">
             <figure>

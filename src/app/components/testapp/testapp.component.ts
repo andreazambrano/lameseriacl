@@ -5,7 +5,7 @@ import { Location } from '@angular/common';
 import { Router } from '@angular/router';
 import { TixInterface } from '../../models/tix-interface'; 
 import { UserWService } from "../../services/user-w.service";
-
+declare var $: any;
 @Component({
   selector: 'app-testapp',
   templateUrl: './testapp.component.html',
@@ -23,22 +23,20 @@ export class TestappComponent implements OnInit {
   public tixs:TixInterface;
 public seted=false;
    loadAPI = null;  
-    
 
    url= "assets/assetslameseria/plugins/jquery-1.12.4.min.js";
+   
    url2= "assets/assetslameseria/plugins/owl-carousel/owl.carousel.min.js";
-    url2b= "assets/assetslameseria/plugins/popper.min.js";
-
-
+   url2b= "assets/assetslameseria/plugins/popper.min.js";
 
    url3= "assets/assetslameseria/plugins/slick/slick/slick.min.js";
-    url3b= "assets/assetslameseria/plugins/jquery-bar-rating/dist/jquery.barrating.min.js";
-
+   url3b= "assets/assetslameseria/plugins/jquery-bar-rating/dist/jquery.barrating.min.js";
 
    url4= "assets/assetslameseria/plugins/slick-animation.min.js";
-
    url4b= "assets/assetslameseria/plugins/lightGallery-master/dist/js/lightgallery-all.min.js";
+   
    url5= "assets/assetslameseria/plugins/jquery-ui/jquery-ui.min.js";
+   
    url6= "assets/assetslameseria/plugins/sticky-sidebar/dist/sticky-sidebar.min.js";
 
    url7 = "assets/assetslameseria/js/main.js";

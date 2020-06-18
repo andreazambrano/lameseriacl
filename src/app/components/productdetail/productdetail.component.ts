@@ -11,8 +11,7 @@ import { ScrollTopService }  from '../../services/scroll-top.service';
 import { TixInterface } from '../../models/tix-interface'; 
 import { UserWService } from "../../services/user-w.service";
 import { ValidationError } from '../../../assets/file-picker/src/lib/validation-error.model';
-
-
+declare var $: any;
 @Component({
   selector: 'app-productdetail',
   templateUrl: './productdetail.component.html',
@@ -20,7 +19,6 @@ import { ValidationError } from '../../../assets/file-picker/src/lib/validation-
 })
 export class ProductdetailComponent implements OnInit {
   constructor(
-
     public scrollTopService:ScrollTopService,
     private router: Router, 
     private dataApi: DataApiService,
@@ -28,9 +26,13 @@ export class ProductdetailComponent implements OnInit {
     private location: Location,
     public _uw:UserWService,
     private formBuilder: FormBuilder
-
   	) { }
     public tix:TixInterface;
+
+
+
+
+
 
 
 
@@ -43,11 +45,19 @@ export class ProductdetailComponent implements OnInit {
     url6 = "assets/assetslameseria/plugins/isotope.pkgd.min.js";
     url7 = "assets/assetslameseria/plugins/jquery.matchHeight-min.js";
     url8 = "assets/assetslameseria/plugins/slick/slick/slick.min.js";   
-
+    url9= "assets/assetslameseria/plugins/jquery-bar-rating/dist/jquery.barrating.min.js";
+    url10= "assets/assetslameseria/plugins/slick-animation.min.js";
+    url11= "https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.3.2/js/lightgallery.js";
+    url12="assets/assetslameseria/plugins/jquery-ui/jquery-ui.min.js";
+      url13 = "assets/assetslameseria/plugins/sticky-sidebar/dist/sticky-sidebar.min.js";
+      url14="assets/assetslameseria/plugins/YTPlayer/dist/jquery.mb.YTPlayer.min.js";
+    url15="assets/assetslameseria/plugins/gmap3.min.js";
+    url16 = "assets/assetslameseria/js/main.js";
   ngOnInit() {
     if (this._uw.loaded==true){
         this.loadAPI = new Promise(resolve => {
           this.loadScript();
+          this.loadScript11();
           this.loadScript2();
           this.loadScript3();
           this.loadScript4();
@@ -55,16 +65,21 @@ export class ProductdetailComponent implements OnInit {
           this.loadScript6();
           this.loadScript7();
           this.loadScript8();
+          this.loadScript9();
+          this.loadScript10();
+          this.loadScript12();
+          this.loadScript13();
+          this.loadScript14();
+          this.loadScript15();
+          this.loadScript16();
         });
       }
+       this._uw.loaded=true;
   	 this.getDetails(this.route.snapshot.paramMap.get('id'));
-
   }
 
     getDetails(id: string){
     this.dataApi.getTixById(id).subscribe(tix => (this.tix = tix));
-
-   
   }
      public loadScript() {
       let node = document.createElement("script");
@@ -114,7 +129,7 @@ export class ProductdetailComponent implements OnInit {
       node.charset = "utf-8";
       document.getElementsByTagName("head")[0].appendChild(node);
     }
-     public loadScript7() {
+      public loadScript7() {
       let node = document.createElement("script");
       node.src = this.url7;
       node.type = "text/javascript";
@@ -130,12 +145,68 @@ export class ProductdetailComponent implements OnInit {
       node.charset = "utf-8";
       document.getElementsByTagName("head")[0].appendChild(node);
     }
-    //  public loadScript9() {
-    //   let node = document.createElement("script");
-    //   node.src = this.url9;
-    //   node.type = "text/javascript";
-    //   node.async = true;
-    //   node.charset = "utf-8";
-    //   document.getElementsByTagName("head")[0].appendChild(node);
-    // }
+     public loadScript9() {
+      let node = document.createElement("script");
+      node.src = this.url9;
+      node.type = "text/javascript";
+      node.async = true;
+      node.charset = "utf-8";
+      document.getElementsByTagName("head")[0].appendChild(node);
+    }
+     public loadScript10() {
+      let node = document.createElement("script");
+      node.src = this.url10;
+      node.type = "text/javascript";
+      node.async = true;
+      node.charset = "utf-8";
+      document.getElementsByTagName("head")[0].appendChild(node);
+    }
+     public loadScript11() {
+      let node = document.createElement("script");
+      node.src = this.url11;
+      node.type = "text/javascript";
+      node.async = true;
+      node.charset = "utf-8";
+      document.getElementsByTagName("head")[0].appendChild(node);
+    }
+      public loadScript12() {
+      let node = document.createElement("script");
+      node.src = this.url12;
+      node.type = "text/javascript";
+      node.async = true;
+      node.charset = "utf-8";
+      document.getElementsByTagName("head")[0].appendChild(node);
+    }
+     public loadScript13() {
+      let node = document.createElement("script");
+      node.src = this.url13;
+      node.type = "text/javascript";
+      node.async = true;
+      node.charset = "utf-8";
+      document.getElementsByTagName("head")[0].appendChild(node);
+    }
+      public loadScript14() {
+      let node = document.createElement("script");
+      node.src = this.url14;
+      node.type = "text/javascript";
+      node.async = true;
+      node.charset = "utf-8";
+      document.getElementsByTagName("head")[0].appendChild(node);
+    }
+      public loadScript15() {
+      let node = document.createElement("script");
+      node.src = this.url15;
+      node.type = "text/javascript";
+      node.async = true;
+      node.charset = "utf-8";
+      document.getElementsByTagName("head")[0].appendChild(node);
+    }
+      public loadScript16() {
+      let node = document.createElement("script");
+      node.src = this.url16;
+      node.type = "text/javascript";
+      node.async = true;
+      node.charset = "utf-8";
+      document.getElementsByTagName("head")[0].appendChild(node);
+    }
 }
