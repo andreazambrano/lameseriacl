@@ -79,7 +79,7 @@ export class ProductdetailComponent implements OnInit {
   }
 
     getDetails(id: string){
-    this.dataApi.getTixById(id).subscribe(tix => (this.tix = tix));
+    this.dataApi.getTixById(id).subscribe(tix => (this._uw.tixPreview = tix));
   }
      public loadScript() {
       let node = document.createElement("script");

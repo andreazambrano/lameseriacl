@@ -54,12 +54,12 @@ public seted=false;
  if (this._uw.loaded==true){
           this.loadAPI = new Promise(resolve => {
             this.loadScript();
+            this.loadScript4b();
             this.loadScript2();
             this.loadScript2b();
             this.loadScript3();
             this.loadScript3b();
             this.loadScript4();
-            this.loadScript4b();
             this.loadScript5();
             this.loadScript6();
             this.loadScript7();

@@ -55,6 +55,7 @@ import { ProductdetailComponent } from './components/productdetail/productdetail
 import { CartComponent } from './components/cart/cart.component';
 import { AccountComponent } from './components/account/account.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
+import { BannerComponent } from './components/banner/banner.component';
 
 @NgModule({
   declarations: [
@@ -75,6 +76,7 @@ import { CheckoutComponent } from './components/checkout/checkout.component';
     CartComponent,
     AccountComponent,
     CheckoutComponent,
+    BannerComponent,
   ],
   imports: [
     BrowserModule,
