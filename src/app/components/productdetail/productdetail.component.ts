@@ -69,8 +69,8 @@ export class ProductdetailComponent implements OnInit {
           this.loadScript10();
           this.loadScript12();
           this.loadScript13();
-          this.loadScript14();
-          this.loadScript15();
+          // this.loadScript14();
+          // this.loadScript15();
           this.loadScript16();
         });
       }
