@@ -54,6 +54,7 @@ export class ProductdetailComponent implements OnInit {
     url15="assets/assetslameseria/plugins/gmap3.min.js";
     url16 = "assets/assetslameseria/js/main.js";
   ngOnInit() {
+        this.scrollTopService.setScrollTop();
     if (this._uw.loaded==true){
         this.loadAPI = new Promise(resolve => {
           this.loadScript();
