@@ -1,4 +1,4 @@
-!function(b) {
+jQuery(function(b){
     "use strict";
     /iPad|iPhone|iPod/.test(navigator.userAgent) && window.MSStream;
     var c = {
@@ -259,41 +259,41 @@
                 })
             }
         }(),
-        0 < (e = b(".ps-product--detail")).length && (b(".ps-product__gallery").lightGallery({
-            selector: ".item a",
-            thumbnail: !0,
-            share: !1,
-            fullScreen: !1,
-            autoplay: !1,
-            autoplayControls: !1,
-            actualSize: !1
-        }),
-        e.hasClass("ps-product--sticky") && b(".ps-product__thumbnail").lightGallery({
-            selector: ".item a",
-            thumbnail: !0,
-            share: !1,
-            fullScreen: !1,
-            autoplay: !1,
-            autoplayControls: !1,
-            actualSize: !1
-        })),
-        b(".ps-gallery--image").lightGallery({
-            selector: ".ps-gallery__item",
-            thumbnail: !0,
-            share: !1,
-            fullScreen: !1,
-            autoplay: !1,
-            autoplayControls: !1,
-            actualSize: !1
-        }),
-        b(".ps-video").lightGallery({
-            thumbnail: !1,
-            share: !1,
-            fullScreen: !1,
-            autoplay: !1,
-            autoplayControls: !1,
-            actualSize: !1
-        }),
+        // 0 < (e = b(".ps-product--detail")).length && (b(".ps-product__gallery").lightGallery({
+        //     selector: ".item a",
+        //     thumbnail: !0,
+        //     share: !1,
+        //     fullScreen: !1,
+        //     autoplay: !1,
+        //     autoplayControls: !1,
+        //     actualSize: !1
+        // }),
+        // e.hasClass("ps-product--sticky") && b(".ps-product__thumbnail").lightGallery({
+        //     selector: ".item a",
+        //     thumbnail: !0,
+        //     share: !1,
+        //     fullScreen: !1,
+        //     autoplay: !1,
+        //     autoplayControls: !1,
+        //     actualSize: !1
+        // })),
+        // b(".ps-gallery--image").lightGallery({
+        //     selector: ".ps-gallery__item",
+        //     thumbnail: !0,
+        //     share: !1,
+        //     fullScreen: !1,
+        //     autoplay: !1,
+        //     autoplayControls: !1,
+        //     actualSize: !1
+        // }),
+        // b(".ps-video").lightGallery({
+        //     thumbnail: !1,
+        //     share: !1,
+        //     fullScreen: !1,
+        //     autoplay: !1,
+        //     autoplayControls: !1,
+        //     actualSize: !1
+        // }),
         b("select.ps-rating").barrating({
             theme: "fontawesome-stars"
         }),
@@ -499,4 +499,4 @@
             b("body").css("overflow-y", "auto"))
         })
     })
-}(jQuery);
+});

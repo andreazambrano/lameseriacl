@@ -33,8 +33,8 @@ public seted=false;
    url3b= "assets/assetslameseria/plugins/jquery-bar-rating/dist/jquery.barrating.min.js";
 
    url4= "assets/assetslameseria/plugins/slick-animation.min.js";
-   url4b= "assets/assetslameseria/plugins/lightGallery-master/dist/js/lightgallery-all.min.js";
-   
+   // url4b= "assets/assetslameseria/plugins/lightGallery-master/dist/js/lightgallery-all.min.js";
+    url4b= "https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.3.2/js/lightgallery.js";
    url5= "assets/assetslameseria/plugins/jquery-ui/jquery-ui.min.js";
    
    url6= "assets/assetslameseria/plugins/sticky-sidebar/dist/sticky-sidebar.min.js";

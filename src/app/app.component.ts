@@ -7,6 +7,7 @@ import { UserWService } from "./services/user-w.service";
 import { SwUpdate } from '@angular/service-worker';
 // declare var $: any;
 declare var $: any;
+declare var b: any;
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
