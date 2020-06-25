@@ -26,7 +26,7 @@
    
           </ul>
         </div>
-        <div class="navigation__right">
+        <div class="navigation__right" *ngIf="{{_uw.numProd}}">
           <div class="header__actions"><a class="ps-search-btn" href="index.html#"><i class="pe-7s-search"></i></a>
        
             <a class="ps-cart-toggle" href="index.html#"><i class="pe-7s-shopbag"></i><span [hidden]="_uw.car.numProd<1"><i>{{_uw.numProd}}</i></span></a>
