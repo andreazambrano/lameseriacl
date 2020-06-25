@@ -53,6 +53,7 @@ export class ProductdetailComponent implements OnInit {
      this.ngFormAddToCar = this.formBuilder.group({
         cantidad:[1,[Validators.required]]
       });
+      this.ngFormAddToCar.value.cantidad=1;
         this.scrollTopService.setScrollTop();
     if (this._uw.loaded==true){
         this.loadAPI = new Promise(resolve => {
@@ -230,4 +231,7 @@ export class ProductdetailComponent implements OnInit {
       node.charset = "utf-8";
       document.getElementsByTagName("head")[0].appendChild(node);
     }
+      get fval() {
+  return this.ngFormAddToCar;
+  }
 }

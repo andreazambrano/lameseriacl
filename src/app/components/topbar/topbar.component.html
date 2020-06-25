@@ -29,7 +29,7 @@
         <div class="navigation__right">
           <div class="header__actions"><a class="ps-search-btn" href="index.html#"><i class="pe-7s-search"></i></a>
        
-            <a class="ps-cart-toggle" href="index.html#"><i class="pe-7s-shopbag"></i><span><i>1</i></span></a>
+            <a class="ps-cart-toggle" href="index.html#"><i class="pe-7s-shopbag"></i><span [hidden]="_uw.car.numProd<1"><i>{{_uw.numProd}}</i></span></a>
           </div>
         </div>
       </div>
@@ -60,7 +60,7 @@
         <div class="navigation__right">
           <div class="header__actions"><a class="ps-search-btn" href="index.html#"><i class="pe-7s-search"></i></a>
         
-            <a class="ps-cart-toggle" href="index.html#"><i class="pe-7s-shopbag"></i><span><i>2</i></span></a>
+            <a class="ps-cart-toggle" href="index.html#"><i class="pe-7s-shopbag"></i><span  [hidden]="_uw.numProd<1"><i>{{_uw.numProd}}</i></span></a>
           </div>
         </div>
       </div>
@@ -88,5 +88,24 @@
           </li>
        
         </ul>
+      </div>
+    </div>
+     <div class="ps-cart--sidebar"> 
+      <div class="ps-cart__header">
+        <h3>Mi carrito</h3><a class="ps-btn--close ps-btn--no-boder" href="product-standard.html#"></a>
+      </div>
+      <div class="ps-cart__content">
+        <div class="ps-product--cart"  *ngFor="let tix of _uw.car;let i = index">
+          <div class="ps-product__thumbnail" >
+            <a ><img src="{{tix.images[0]}}" alt=""></a><span class="ps-btn--close ps-btn--no-boder"></span></div>
+          <div class="ps-product__content"><a>{{tix.productName}}</a><span>{{tix.cantidad}} x CLP {{tix.globalPrice}}</span></div>
+        </div>
+       <!--  <div class="ps-product--cart">
+          <div class="ps-product__thumbnail"><a href="product-standard.html"><img src="assets/assetslameseria/img/product/best-3-1.jpg" alt=""></a><span class="ps-btn--close ps-btn--no-boder"></span></div>
+          <div class="ps-product__content"><a href="product-standard.html#">Cyan Boheme - Cyan, M</a><span>Size: M</span><span>1x $45.00</span></div>
+        </div> -->
+      </div>
+      <div class="ps-cart__footer">
+        <h4>SubTotal: <span>CLP {{_uw.subTotal}}</span></h4><a class="ps-btn" routerLink="cart">Ver carrito</a><a class="ps-btn" href="shopping-cart.html">Pagar</a>
       </div>
     </div>

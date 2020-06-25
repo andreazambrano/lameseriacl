@@ -8,7 +8,7 @@
         </ul>
       </div>
     </div>
-    <div class="container"  *ngIf="_uw.tixPreview">
+    <div class="container"  *ngIf="_uw.tixPreview !== undefined">
       <form class="form" [formGroup]="ngFormAddToCar">
         <div class="ps-product--detail">
           <div class="ps-product__header">
@@ -39,19 +39,26 @@
                 <div class="form-group--number">
                   <button class="up"><i class="fa fa-plus"></i></button>
                   <button class="down"><i class="fa fa-minus"></i></button>
-                  <input class="form-control" type="text" placeholder="1">
-                </div><a class="ps-btn" (click)="add(tix)">Agregar al carro</a>
+                  <!-- <input class="form-control" type="text" placeholder="1"> -->
+               <!--    <input type="number" class="form-control" id="cantidad" formControlName="cantidad"  formControlName="cantidad" value="1" [(ngModel)]="tix.cantidad"  [ngClass]="{ 'is-invalid': submitted && fval.cantidad.errors }"
+                                required>
+ -->
+
+        <input type="number" class="form-control" id="cantidad" formControlName="cantidad" value="1"   [ngClass]="{ 'is-invalid': submitted && fval.cantidad.errors }"
+                                required>
+              
+                </div><a class="ps-btn" (click)="add(_uw.tixPreview)">Agregar al carro</a>
               </div>
             </div>
           </div>
         </div>
       </form>
     </div>
-    <div id="cart-sticky">
+<!--     <div id="cart-sticky">
       <div class="form-group--number">
         <button class="up"><i class="fa fa-plus"></i></button>
         <button class="down"><i class="fa fa-minus"></i></button>
-<!--         <input class="form-control" type="text" placeholder="1"> -->
+
         <input type="number" class="form-control" id="cantidad" formControlName="cantidad" value="1">
       </div><a class="ps-btn" href="product-standard.html#">Add to cart</a>
-    </div>
+    </div> -->

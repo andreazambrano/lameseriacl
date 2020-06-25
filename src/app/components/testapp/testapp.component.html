@@ -41,7 +41,8 @@
                     <ul class="ps-product__actions">
                       <li><a routerLink="/productdetail/{{tix.id}}">Ver detalles</a></li>
                     </ul>
-                    <p class="ps-product__size">{{tix.productName}}</p>
+                    <p class="ps-product__size">Dimensiones: </p>
+                    <p class="ps-product__size">{{tix.dimensiones}}</p>
                   </div>
                   <div class="ps-product__content">
                     <div class="ps-product__meta">
@@ -114,7 +115,7 @@
                 <div class="ps-block--feature">
                   <div class="ps-block__left"><i class="pe-7s-car"></i></div>
                   <div class="ps-block__right">
-                    <p>ENVÍO A DOMICILIO</p><small>Envío gratis en todos los pedidos a CHILE</small>
+                    <p>ENVÍO A DOMICILIO</p><small>Envío gratis para todo Santiago</small>
                   </div>
                 </div>
               </div>
@@ -163,21 +164,22 @@
         </form>
       </div>
     </div>
-    <div class="ps-cart--sidebar">
+    <div class="ps-cart--sidebar"> 
       <div class="ps-cart__header">
         <h3>Mi carrito</h3><a class="ps-btn--close ps-btn--no-boder" href="product-standard.html#"></a>
       </div>
       <div class="ps-cart__content">
-        <div class="ps-product--cart">
-          <div class="ps-product__thumbnail"><a href="product-standard.html"><img src="assets/assetslameseria/img/product/best-5-1.jpg" alt=""></a><span class="ps-btn--close ps-btn--no-boder"></span></div>
-          <div class="ps-product__content"><a href="product-standard.html#">Cyan Boheme - Cyan, M</a><span>1x $45.00</span></div>
+        <div class="ps-product--cart"  *ngFor="let tix of _uw.car;let i = index">
+          <div class="ps-product__thumbnail" >
+            <a ><img src="{{tix.images[0]}}" alt=""></a><span class="ps-btn--close ps-btn--no-boder"></span></div>
+          <div class="ps-product__content"><a>{{tix.productName}}</a><span>{{tix.cantidad}} x CLP {{tix.globalPrice}}</span></div>
         </div>
-        <div class="ps-product--cart">
+       <!--  <div class="ps-product--cart">
           <div class="ps-product__thumbnail"><a href="product-standard.html"><img src="assets/assetslameseria/img/product/best-3-1.jpg" alt=""></a><span class="ps-btn--close ps-btn--no-boder"></span></div>
           <div class="ps-product__content"><a href="product-standard.html#">Cyan Boheme - Cyan, M</a><span>Size: M</span><span>1x $45.00</span></div>
-        </div>
+        </div> -->
       </div>
       <div class="ps-cart__footer">
-        <h4>SubTotal: <span>$60.00</span></h4><a class="ps-btn" routerLink="cart">Ver carrito</a><a class="ps-btn" href="shopping-cart.html">Pagar</a>
+        <h4>SubTotal: <span>CLP {{_uw.subTotal}}</span></h4><a class="ps-btn" routerLink="cart">Ver carrito</a><a class="ps-btn" href="shopping-cart.html">Pagar</a>
       </div>
     </div>
