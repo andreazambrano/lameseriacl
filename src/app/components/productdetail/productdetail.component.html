@@ -1,4 +1,4 @@
-<!-- <p>productdetail works!</p> -->
+
    <div class="ps-breadcrumb">
       <div class="container-fluid">
         <ul class="breadcrumb">
@@ -9,68 +9,49 @@
       </div>
     </div>
     <div class="container"  *ngIf="_uw.tixPreview">
-      <div class="ps-product--detail">
-        <div class="ps-product__header">
-          <div class="ps-product__thumbnail" data-vertical="true">
-            <figure>
-              <div class="ps-wrapper">
-                <div class="ps-product__gallery" data-arrow="true">
-
-                  <div class="item" *ngFor="let image of _uw.tixPreview.images; index as f">
-                    <a href="{{_uw.tixPreview.images[f]}}">
-                      <img src="{{_uw.tixPreview.images[f]}}" alt="">
-                    </a>
+      <form class="form" [formGroup]="ngFormAddToCar">
+        <div class="ps-product--detail">
+          <div class="ps-product__header">
+            <div class="ps-product__thumbnail" data-vertical="true">
+              <figure>
+                <div class="ps-wrapper">
+                  <div class="ps-product__gallery" data-arrow="true">
+                    <div class="item" *ngFor="let image of _uw.tixPreview.images; index as f">
+                      <a href="{{_uw.tixPreview.images[f]}}">
+                        <img src="{{_uw.tixPreview.images[f]}}" alt="">
+                      </a>
+                    </div>
                   </div>
-
-         
                 </div>
-               <!--  <div id="lightgallery">
-                   <a href="{{_uw.tixPreview.images[f]}}" *ngFor="let image of _uw.tixPreview.images; index as f">
-                      <img src="{{_uw.tixPreview.images[f]}}" />
-                  </a>
-                </div> -->
-          
+              </figure>
+              <div class="ps-product__variants" data-item="4" data-md="3" data-sm="3" data-arrow="false">
+                <div class="item" *ngFor="let image of _uw.tixPreview.images; index as f" ><img src="{{_uw.tixPreview.images[f]}}" alt=""></div>
               </div>
-            </figure>
-            <div class="ps-product__variants" data-item="4" data-md="3" data-sm="3" data-arrow="false">
-              
-              <div class="item" *ngFor="let image of _uw.tixPreview.images; index as f" ><img src="{{_uw.tixPreview.images[f]}}" alt=""></div>
-
-   
             </div>
-          </div>
-          <div class="ps-product__info">
-            <h1>{{_uw.tixPreview.productName}}</h1>
-            <h4 class="ps-product__price">CLP {{_uw.tixPreview.globalPrice}}</h4>
-            <div class="ps-product__desc">
-              <p>{{_uw.tixPreview.description}}</p>
-              <p><b>Dimensiones: </b> {{_uw.tixPreview.dimensiones}}</p>
+            <div class="ps-product__info">
+              <h1>{{_uw.tixPreview.productName}}</h1>
+              <h4 class="ps-product__price">CLP {{_uw.tixPreview.globalPrice}}</h4>
+              <div class="ps-product__desc">
+                <p>{{_uw.tixPreview.description}}</p>
+                <p><b>Dimensiones: </b> {{_uw.tixPreview.dimensiones}}</p>
+              </div>
+              <div class="ps-product__shopping">
+                <div class="form-group--number">
+                  <button class="up"><i class="fa fa-plus"></i></button>
+                  <button class="down"><i class="fa fa-minus"></i></button>
+                  <input class="form-control" type="text" placeholder="1">
+                </div><a class="ps-btn" (click)="add(tix)">Agregar al carro</a>
+              </div>
             </div>
-            <div class="ps-product__shopping">
-              <div class="form-group--number">
-                <button class="up"><i class="fa fa-plus"></i></button>
-                <button class="down"><i class="fa fa-minus"></i></button>
-                <input class="form-control" type="text" placeholder="1">
-              </div><a class="ps-btn" href="product-standard.html#">Agregar al carro</a>
-
-              <!-- <a class="ps-product__favorite" href="product-standard.html#"> -->
-                <!-- <i class="fa fa-heart-o"></i> -->
-              <!-- </a> -->
-            </div>
-   
           </div>
         </div>
-  
-      </div>
+      </form>
     </div>
     <div id="cart-sticky">
       <div class="form-group--number">
         <button class="up"><i class="fa fa-plus"></i></button>
         <button class="down"><i class="fa fa-minus"></i></button>
-        <input class="form-control" type="text" placeholder="1">
+<!--         <input class="form-control" type="text" placeholder="1"> -->
+        <input type="number" class="form-control" id="cantidad" formControlName="cantidad" value="1">
       </div><a class="ps-btn" href="product-standard.html#">Add to cart</a>
     </div>
-<!--     <script>
-   lightGallery(document.getElementById('lightgallery'));
-</script>
- -->

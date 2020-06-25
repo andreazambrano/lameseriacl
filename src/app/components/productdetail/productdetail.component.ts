@@ -27,14 +27,10 @@ export class ProductdetailComponent implements OnInit {
     public _uw:UserWService,
     private formBuilder: FormBuilder
   	) { }
+      ngFormAddToCar: FormGroup;
+    submitted = false;
     public tix:TixInterface;
-
-
-
-
-
-
-
+    public addp:AddInterface;
 
     loadAPI = null;
     url = "assets/assetslameseria/plugins/jquery-1.12.4.min.js";
@@ -54,6 +50,9 @@ export class ProductdetailComponent implements OnInit {
     url15="assets/assetslameseria/plugins/gmap3.min.js";
     url16 = "assets/assetslameseria/js/main.js";
   ngOnInit() {
+     this.ngFormAddToCar = this.formBuilder.group({
+        cantidad:[1,[Validators.required]]
+      });
         this.scrollTopService.setScrollTop();
     if (this._uw.loaded==true){
         this.loadAPI = new Promise(resolve => {
@@ -78,6 +77,27 @@ export class ProductdetailComponent implements OnInit {
        this._uw.loaded=true;
   	 this.getDetails(this.route.snapshot.paramMap.get('id'));
   }
+
+    public add(tix){
+   
+
+      // if (tix.discount){
+      //   this.finalPrice=tix.price - (tix.price*tix.discount/100);  
+      // }
+      // if (!tix.discount){
+      //   this.finalPrice=tix.price;  
+      // }
+      // console.log("hola, entiendo que debo agregar "+this.ngFormAddToCar.value.cantidad +" pares del modelo: " +tix.productName+" para un total de: " +(this.ngFormAddToCar.value.cantidad*this.finalPrice));
+  
+        this.addp=tix;
+        this.addp.cantidad=this.ngFormAddToCar.value.cantidad;
+        // this.addp.globalPrice=this.globalPrice;
+        this._uw.car.push(this.addp);
+        this._uw.subTotal=this._uw.subTotal+(this.ngFormAddToCar.value.cantidad*tix.globalPrice);
+        this._uw.numProd=this._uw.numProd+1;
+        this.router.navigate(['/']);
+    }
+
 
     getDetails(id: string){
     this.dataApi.getTixById(id).subscribe(tix => (this._uw.tixPreview = tix));

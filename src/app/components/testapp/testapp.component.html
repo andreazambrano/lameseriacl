@@ -39,188 +39,19 @@
                 <div class="ps-product" routerLink="/productdetail/{{tix.id}}">
                   <div class="ps-product__thumbnail"><a class="ps-product__overlay" ></a><a class="ps-product__img" ><img src="{{tix.images[0]}}" alt=""/></a><a class="ps-product__img-alt" ><img src="{{tix.images[1]}}" alt=""/></a><a class="ps-product__favorite" ><i class="fa fa-heart-o"></i></a>
                     <ul class="ps-product__actions">
-                      <!-- <li><a href="product-standard.html">Quick Shop</a></li> -->
-                      <li><a routerLink="/productdetail/{{tix.id}}">Agregar al carrito</a></li>
+                      <li><a routerLink="/productdetail/{{tix.id}}">Ver detalles</a></li>
                     </ul>
-                    <p class="ps-product__size">S, M, L</p>
+                    <p class="ps-product__size">{{tix.productName}}</p>
                   </div>
                   <div class="ps-product__content">
                     <div class="ps-product__meta">
                       <a ></a>
                     </div>
-
                     <a class="ps-product__title" >{{tix.productName}}</a>
                     <p class="ps-product__price"> CLP {{tix.globalPrice}}</p>
-                    <!-- <div class="ps-product__color">
-                      <div class="ps-radio ps-radio--color ps-radio--inline color-1">
-                        <input class="form-control" type="radio" id="color-020" name="color-0"/>
-                        <label for="color-020"></label>
-                      </div>
-                      <div class="ps-radio ps-radio--color ps-radio--inline color-2">
-                        <input class="form-control" type="radio" id="color-058" name="color-0"/>
-                        <label for="color-058"></label>
-                      </div>
-                      <div class="ps-radio ps-radio--color ps-radio--inline color-3">
-                        <input class="form-control" type="radio" id="color-064" name="color-0"/>
-                        <label for="color-064"></label>
-                      </div>
-                    </div> -->
-                  </div>
+                   </div>
                 </div>
               </div>
-             <!--  <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-12 ">
-                <div class="ps-product">
-                  <div class="ps-product__thumbnail"><a class="ps-product__overlay" href="product-standard.html"></a><a class="ps-product__img" href="product-standard.html"><img src="assets/assetslameseria/img/product/best-4-1.jpg" alt=""/></a><a class="ps-product__img-alt" href="product-standard.html"><img src="assets/assetslameseria/img/product/trend-4-2.jpg" alt=""/></a><a class="ps-product__favorite" href="index.html#"><i class="fa fa-heart-o"></i></a>
-                    <ul class="ps-product__actions">
-                      <li><a href="product-standard.html">Quick Shop</a></li>
-                      <li><a href="product-standard.html">Agregar al carrito</a></li>
-                    </ul>
-                    <p class="ps-product__size">S, M, L</p>
-                  </div>
-                  <div class="ps-product__content">
-                    <div class="ps-product__meta"><a href="shop-2-column.html"></a></div><a class="ps-product__title" href="product-standard.html">Calvin Klein Logo Sweatpants</a>
-                    <p class="ps-product__price"> $36.00</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-12 ">
-                <div class="ps-product">
-                  <div class="ps-product__thumbnail"><a class="ps-product__overlay" href="product-standard.html"></a><a class="ps-product__img" href="product-standard.html"><img src="assets/assetslameseria/img/product/best-6-1.jpg" alt=""/></a><a class="ps-product__img-alt" href="product-standard.html"><img src="assets/assetslameseria/img/product/best-6-2.jpg" alt=""/></a><a class="ps-product__favorite" href="index.html#"><i class="fa fa-heart-o"></i></a>
-                    <ul class="ps-product__actions">
-                      <li><a href="product-standard.html">Quick Shop</a></li>
-                      <li><a href="product-standard.html">Agregar al carrito</a></li>
-                    </ul>
-                    <p class="ps-product__size">S, M, L</p>
-                  </div>
-                  <div class="ps-product__content">
-                    <div class="ps-product__meta"><a href="shop-2-column.html"></a></div><a class="ps-product__title" href="product-standard.html">Cuffed Beanie</a>
-                    <p class="ps-product__price"> $45.00 – $53.00</p>
-                    <div class="ps-product__color">
-                      <div class="ps-radio ps-radio--color ps-radio--inline color-1">
-                        <input class="form-control" type="radio" id="color-289" name="color-2"/>
-                        <label for="color-289"></label>
-                      </div>
-                      <div class="ps-radio ps-radio--color ps-radio--inline color-2">
-                        <input class="form-control" type="radio" id="color-235" name="color-2"/>
-                        <label for="color-235"></label>
-                      </div>
-                      <div class="ps-radio ps-radio--color ps-radio--inline color-3">
-                        <input class="form-control" type="radio" id="color-210" name="color-2"/>
-                        <label for="color-210"></label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-12 ">
-                <div class="ps-product">
-                  <div class="ps-product__thumbnail"><a class="ps-product__overlay" href="product-standard.html"></a><span class="ps-product__badge disabled"><i>Sold Out</i></span><a class="ps-product__img" href="product-standard.html"><img src="assets/assetslameseria/img/product/trend-2-1.jpg" alt=""/></a><a class="ps-product__img-alt" href="product-standard.html"><img src="assets/assetslameseria/img/product/trend-2-2.jpg" alt=""/></a><a class="ps-product__favorite" href="index.html#"><i class="fa fa-heart-o"></i></a>
-                    <ul class="ps-product__actions">
-                      <li><a href="product-standard.html">Quick Shop</a></li>
-                      <li><a href="product-standard.html">Agregar al carrito</a></li>
-                    </ul>
-                    <p class="ps-product__size">S, M, L</p>
-                  </div>
-                  <div class="ps-product__content">
-                    <div class="ps-product__meta"><a href="shop-2-column.html"></a></div><a class="ps-product__title" href="product-standard.html">Short Sleeved Hoodie With Step Hem</a>
-                    <p class="ps-product__price"> $35.00</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-12 ">
-                <div class="ps-product">
-                  <div class="ps-product__thumbnail"><a class="ps-product__overlay" href="product-standard.html"></a><span class="ps-product__badge"><i> - 14.3%</i></span><a class="ps-product__img" href="product-standard.html"><img src="assets/assetslameseria/img/product/trend-3-1.jpg" alt=""/></a><a class="ps-product__img-alt" href="product-standard.html"><img src="assets/assetslameseria/img/product/best-3-2.jpg" alt=""/></a><a class="ps-product__favorite" href="index.html#"><i class="fa fa-heart-o"></i></a>
-                    <ul class="ps-product__actions">
-                      <li><a href="product-standard.html">Quick Shop</a></li>
-                      <li><a href="product-standard.html">Agregar al carrito</a></li>
-                    </ul>
-                    <p class="ps-product__size">S, M, L</p>
-                  </div>
-                  <div class="ps-product__content">
-                    <div class="ps-product__meta"><a href="shop-2-column.html"></a></div><a class="ps-product__title" href="product-standard.html">Woleen Tee</a>
-                    <p class="ps-product__price sale"> <del>$35.00</del>$30.00</p>
-                    <div class="ps-product__color">
-                      <div class="ps-radio ps-radio--color ps-radio--inline color-1">
-                        <input class="form-control" type="radio" id="color-419" name="color-4"/>
-                        <label for="color-419"></label>
-                      </div>
-                      <div class="ps-radio ps-radio--color ps-radio--inline color-2">
-                        <input class="form-control" type="radio" id="color-445" name="color-4"/>
-                        <label for="color-445"></label>
-                      </div>
-                      <div class="ps-radio ps-radio--color ps-radio--inline color-3">
-                        <input class="form-control" type="radio" id="color-475" name="color-4"/>
-                        <label for="color-475"></label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-12 ">
-                <div class="ps-product">
-                  <div class="ps-product__thumbnail"><a class="ps-product__overlay" href="product-standard.html"></a><a class="ps-product__img" href="product-standard.html"><img src="assets/assetslameseria/img/product/trend-4-1.jpg" alt=""/></a><a class="ps-product__img-alt" href="product-standard.html"><img src="assets/assetslameseria/img/product/trend-4-1b.jpg" alt=""/></a><a class="ps-product__favorite" href="index.html#"><i class="fa fa-heart-o"></i></a>
-                    <ul class="ps-product__actions">
-                      <li><a href="product-standard.html">Quick Shop</a></li>
-                      <li><a href="product-standard.html">Agregar al carrito</a></li>
-                    </ul>
-                    <p class="ps-product__size">S, M, L</p>
-                  </div>
-                  <div class="ps-product__content">
-                    <div class="ps-product__meta"><a href="shop-2-column.html"></a></div><a class="ps-product__title" href="product-standard.html">Grey Beanie</a>
-                    <p class="ps-product__price"> $15.00</p>
-                    <div class="ps-product__color">
-                      <div class="ps-radio ps-radio--color ps-radio--inline color-1">
-                        <input class="form-control" type="radio" id="color-535" name="color-5"/>
-                        <label for="color-535"></label>
-                      </div>
-                      <div class="ps-radio ps-radio--color ps-radio--inline color-2">
-                        <input class="form-control" type="radio" id="color-57" name="color-5"/>
-                        <label for="color-57"></label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-12 ">
-                <div class="ps-product">
-                  <div class="ps-product__thumbnail"><a class="ps-product__overlay" href="product-standard.html"></a><span class="ps-product__badge"><i> - 14.3%</i></span><a class="ps-product__img" href="product-standard.html"><img src="assets/assetslameseria/img/product/trend-5-1.jpg" alt=""/></a><a class="ps-product__img-alt" href="product-standard.html"><img src="assets/assetslameseria/img/product/trend-5-2.jpg" alt=""/></a><a class="ps-product__favorite" href="index.html#"><i class="fa fa-heart-o"></i></a>
-                    <ul class="ps-product__actions">
-                      <li><a href="product-standard.html">Quick Shop</a></li>
-                      <li><a href="product-standard.html">Agregar al carrito</a></li>
-                    </ul>
-                    <p class="ps-product__size">S, M, L</p>
-                  </div>
-                  <div class="ps-product__content">
-                    <div class="ps-product__meta"><a href="shop-2-column.html"></a></div><a class="ps-product__title" href="product-standard.html">Pink Leather Watch</a>
-                    <p class="ps-product__price sale"> <del>$35.00</del>$30.00</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-12 ">
-                <div class="ps-product">
-                  <div class="ps-product__thumbnail"><a class="ps-product__overlay" href="product-standard.html"></a><a class="ps-product__img" href="product-standard.html"><img src="assets/assetslameseria/img/product/best-3-1.jpg" alt=""/></a><a class="ps-product__img-alt" href="product-standard.html"><img src="assets/assetslameseria/img/product/best-3-1b.jpg" alt=""/></a><a class="ps-product__favorite" href="index.html#"><i class="fa fa-heart-o"></i></a>
-                    <ul class="ps-product__actions">
-                      <li><a href="product-standard.html">Quick Shop</a></li>
-                      <li><a href="product-standard.html">Agregar al carrito</a></li>
-                    </ul>
-                    <p class="ps-product__size">S, M, L</p>
-                  </div>
-                  <div class="ps-product__content">
-                    <div class="ps-product__meta"><a href="shop-2-column.html"></a></div><a class="ps-product__title" href="product-standard.html">Brown Sneaker Shoest</a>
-                    <p class="ps-product__price"> $45.00 – $53.00</p>
-                    <div class="ps-product__color">
-                      <div class="ps-radio ps-radio--color ps-radio--inline color-1">
-                        <input class="form-control" type="radio" id="color-781" name="color-7"/>
-                        <label for="color-781"></label>
-                      </div>
-                      <div class="ps-radio ps-radio--color ps-radio--inline color-2">
-                        <input class="form-control" type="radio" id="color-764" name="color-7"/>
-                        <label for="color-764"></label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div> -->
             </div>
           </div>
         </div>
