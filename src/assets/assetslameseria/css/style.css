@@ -5206,6 +5206,7 @@ textarea.form-control {
 }
 
 .ps-carousel--animate .slick-dots li button {
+
   display: inline-block;
   border: 0;
   padding: 0;
@@ -5218,10 +5219,13 @@ textarea.form-control {
   -ms-border-radius: 50%;
   border-radius: 50%;
   background-color: rgba(0, 0, 0, 0.5);
+    /*background-color: #875b39;*/
 }
 
 .ps-carousel--animate .slick-dots li.slick-active button {
-  background-color: #000;
+  /*background-color: #a57b5b;*/
+    background-color: #000;
+
 }
 
 .ps-carousel--animate .slick-dots li:last-child {
@@ -7327,7 +7331,9 @@ textarea.form-control {
 }
 
 .ps-banner.left .ps-banner__content {
-  left: 45px;
+  left: 0px;
+  /*left: 45px;*/
+  /*espacio izquierda banner*/
 }
 
 .ps-banner.right .ps-banner__content {
@@ -7336,6 +7342,8 @@ textarea.form-control {
 
 .ps-banner.center {
   left: 50%;
+  
+  /*position: absolute;*/
   -webkit-transform: translate(-50%, -50%);
   -moz-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
