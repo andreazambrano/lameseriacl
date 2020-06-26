@@ -14,7 +14,7 @@ declare var $: any;
 export class TestappComponent implements OnInit {
 
   constructor(
-       private dataApi: DataApiService,
+    private dataApi: DataApiService,
     private location: Location,
     private route:ActivatedRoute,
     private router: Router, 

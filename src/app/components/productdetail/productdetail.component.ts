@@ -96,7 +96,7 @@ export class ProductdetailComponent implements OnInit {
         this._uw.car.push(this.addp);
         this._uw.subTotal=this._uw.subTotal+(this.ngFormAddToCar.value.cantidad*tix.globalPrice);
         this._uw.numProd=this._uw.numProd+1;
-        this.router.navigate(['/']);
+        this.router.navigate(['/shop']);
     }
 
 

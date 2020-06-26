@@ -7,56 +7,46 @@
                 <thead>
                   <tr>
                     <!-- <th></th> -->
-                    <th>Product</th>
-                    <th>Price</th>
-                    <th>Quantity</th>
+                    <th>Producto</th>
+                    <th>Precio</th>
+                    <th>Cantidad</th>
                     <th>Total</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <!-- <td><a href="product-standard.html"><img src="img/product/best-2-1.jpg" alt=""></a></td> -->
-                    <td><img src="img/product/best-2-1.jpg" alt=""><a href="product-standard.html">Cyan Boheme - Cyan, M</a></td>
-                    <td>$45.00</td>
+                  <tr *ngFor="let tix of _uw.car">
+                   
+                    <td><img src="{{tix.images[0]}}" alt=""><a>{{tix.productName}}</a></td>
+                    <td>CLP {{tix.globalPrice}}</td>
                     <td>
                       <div class="form-group--number">
                         <button class="up"><i class="fa fa-plus"></i></button>
                         <button class="down"><i class="fa fa-minus"></i></button>
-                        <input class="form-control" type="text" placeholder="1" value="1">
+                        <input class="form-control" type="text" [ngModel]="tix.cantidad" placeholder="1" disabled="true" min="0">
                       </div>
                     </td>
-                    <td>
-                      <p>$45.00</p><a class="ps-btn--close ps-btn--no-boder" href="shopping-cart.html#"></a>
+                    <td style="vertical-align: middle;text-align: left;">
+                      {{tix.globalPrice* tix.cantidad}}
+                      <a class="ps-btn--close ps-btn--no-boder" ></a>
                     </td>
                   </tr>
-              <!--     <tr class="coupon">
-                    <td colspan="2">
-                      <div class="form-group--inline">
-                        <label>Coupon</label>
-                        <div class="form-group__content">
-                          <input class="form-control" type="text" placeholder="Coupon Code">
-                          <button class="ps-btn ps-btn--outline ps-btn--black">Apply coupon</button>
-                        </div>
-                      </div>
-                    </td>
-                    <td colspan="3"><a class="ps-btn ps-btn--outline ps-btn--black" href="shopping-cart.html#"> Update Cart</a></td>
-                  </tr> -->
+             
                 </tbody>
               </table>
             </div>
             <figure class="ps-shopping-cart__total">
-              <figcaption>CART TOTALS</figcaption>
+              <figcaption>SUB TOTALES</figcaption>
               <div class="table-responsive">
                 <table class="table ps-table">
                   <tbody>
                     <tr>
                       <td><strong>Subtotal</strong></td>
-                      <td>$45.00</td>
+                      <td>CLP {{_uw.subTotal}}</td>
                     </tr>
                     <tr>
-                      <td><strong>Shiping</strong></td>
+                      <td><strong>ENVIO</strong></td>
                       <td>
-                        <p>Local Pickup: $15.00</p><a href="shopping-cart.html#">Calculate shipping</a>
+                        <p>Local Pickup: $15.00</p><a >Calculate shipping</a>
                       </td>
                     </tr>
                     <tr>
@@ -66,7 +56,7 @@
                   </tbody>
                 </table>
               </div>
-              <div class="footer"><a class="ps-btn ps-btn--outline ps-btn--black" href="checkout.html">Process to checkout</a></div>
+              <div class="footer"><a class="ps-btn ps-btn--outline ps-btn--black" >Confirmar compra</a></div>
             </figure>
           </div>
         </div>
