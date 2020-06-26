@@ -35,18 +35,13 @@
                 <p>{{_uw.tixPreview.description}}</p>
                 <p><b>Dimensiones: </b> {{_uw.tixPreview.dimensiones}}</p>
               </div>
-              <div class="ps-product__shopping">
-                <div class="form-group--number" *ngIf="this.ngFormAddToCar.value.cantidad">
+              <div class="ps-product__shopping" *ngIf="this.ngFormAddToCar">
+                <div class="form-group--number">
                   <button class="up"><i class="fa fa-plus"></i></button>
                   <button class="down"><i class="fa fa-minus"></i></button>
-                  <!-- <input class="form-control" type="text" placeholder="1"> -->
-               <!--    <input type="number" class="form-control" id="cantidad" formControlName="cantidad"  formControlName="cantidad" value="1" [(ngModel)]="tix.cantidad"  [ngClass]="{ 'is-invalid': submitted && fval.cantidad.errors }"
-                                required>
- -->
+                  <!-- <input type="number" class="form-control" id="cantidad" formControlName="cantidad"    [ngClass]="{ 'is-invalid': submitted && fval.cantidad.errors }" required> -->
+                  <input type="number" class="form-control" id="cantidad" formControlName="cantidad" value="1">
 
-        <input type="number" class="form-control" id="cantidad" formControlName="cantidad" value="1"   [ngClass]="{ 'is-invalid': submitted && fval.cantidad.errors }"
-                                required>
-              
                 </div><a class="ps-btn" (click)="add(_uw.tixPreview)">Agregar al carro</a>
               </div>
             </div>
