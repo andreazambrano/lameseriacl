@@ -27,7 +27,7 @@ export class ProductdetailComponent implements OnInit {
     public _uw:UserWService,
     private formBuilder: FormBuilder
   	) { }
-      ngFormAddToCar: FormGroup;
+      // ngFormAddToCar: FormGroup;
     submitted = false;
     public tix:TixInterface;
     public addp:AddInterface;
@@ -50,10 +50,12 @@ export class ProductdetailComponent implements OnInit {
     url15="assets/assetslameseria/plugins/gmap3.min.js";
     url16 = "assets/assetslameseria/js/main.js";
   ngOnInit() {
-     this.ngFormAddToCar = this.formBuilder.group({
-        cantidad:[1,[Validators.required]]
-      });
-      this.ngFormAddToCar.value.cantidad=1;
+
+    
+     // this.ngFormAddToCar = this.formBuilder.group({
+     //    cantidad:[1,[Validators.required]]
+     //  });
+      // this.ngFormAddToCar.value.cantidad=1;
         this.scrollTopService.setScrollTop();
     if (this._uw.loaded==true){
         this.loadAPI = new Promise(resolve => {
@@ -77,7 +79,27 @@ export class ProductdetailComponent implements OnInit {
       }
        this._uw.loaded=true;
   	 this.getDetails(this.route.snapshot.paramMap.get('id'));
+     this.initCant();
+
   }
+
+    public initCant(){
+      if(this._uw.tixPreview.cantidad == undefined){this._uw.tixPreview.cantidad=1;}
+    }
+
+    public up(){
+      this.initCant();
+      this._uw.tixPreview.cantidad=this._uw.tixPreview.cantidad+1;
+
+    }
+
+    public down(){
+            this.initCant();
+      if(this._uw.tixPreview.cantidad>1){
+        this._uw.tixPreview.cantidad=this._uw.tixPreview.cantidad-1;
+      }
+
+    }
 
     public add(tix){
    
@@ -91,10 +113,10 @@ export class ProductdetailComponent implements OnInit {
       // console.log("hola, entiendo que debo agregar "+this.ngFormAddToCar.value.cantidad +" pares del modelo: " +tix.productName+" para un total de: " +(this.ngFormAddToCar.value.cantidad*this.finalPrice));
   
         this.addp=tix;
-        this.addp.cantidad=this.ngFormAddToCar.value.cantidad;
+        this.addp.cantidad=this._uw.tixPreview.cantidad;
         // this.addp.globalPrice=this.globalPrice;
         this._uw.car.push(this.addp);
-        this._uw.subTotal=this._uw.subTotal+(this.ngFormAddToCar.value.cantidad*tix.globalPrice);
+        this._uw.subTotal=this._uw.subTotal+(this._uw.tixPreview.cantidad*tix.globalPrice);
         this._uw.numProd=this._uw.numProd+1;
         this.router.navigate(['/shop']);
     }
@@ -231,7 +253,7 @@ export class ProductdetailComponent implements OnInit {
       node.charset = "utf-8";
       document.getElementsByTagName("head")[0].appendChild(node);
     }
-      get fval() {
-  return this.ngFormAddToCar;
-  }
+  //     get fval() {
+  // return this.ngFormAddToCar;
+  // }
 }

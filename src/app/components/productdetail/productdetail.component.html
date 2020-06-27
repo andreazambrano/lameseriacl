@@ -9,7 +9,7 @@
       </div>
     </div>
     <div class="container"  *ngIf="_uw.tixPreview !== undefined">
-      <form class="form" [formGroup]="ngFormAddToCar">
+      <!-- <form class="form" [formGroup]="ngFormAddToCar"> -->
         <div class="ps-product--detail">
           <div class="ps-product__header">
             <div class="ps-product__thumbnail" data-vertical="true">
@@ -35,19 +35,21 @@
                 <p>{{_uw.tixPreview.description}}</p>
                 <p><b>Dimensiones: </b> {{_uw.tixPreview.dimensiones}}</p>
               </div>
-              <div class="ps-product__shopping" *ngIf="this.ngFormAddToCar">
+              <div class="ps-product__shopping" *ngIf="this._uw.tixPreview">
                 <div class="form-group--number">
-                  <button class="up"><i class="fa fa-plus"></i></button>
-                  <button class="down"><i class="fa fa-minus"></i></button>
+                  <button class="up" (click)="up()"><i class="fa fa-plus"></i></button>
+                  <button class="down" (click)="down()"><i class="fa fa-minus"></i></button>
                   <!-- <input type="number" class="form-control" id="cantidad" formControlName="cantidad"    [ngClass]="{ 'is-invalid': submitted && fval.cantidad.errors }" required> -->
-                  <input type="number" class="form-control" id="cantidad" formControlName="cantidad" value="1">
+                  <!-- <input type="number" class="form-control" id="cantidad" formControlName="cantidad" [ngModel]="_uw.tixPreview.cantidad" > -->
+               <!--      <span [hidden]="this._uw.tixPreview.cantidad !== undefined"></span> -->
+                   <input type="number"  class="form-control"id="cantidad" [(ngModel)]="this._uw.tixPreview.cantidad" value="1"  size="1" disabled="disabled">
 
                 </div><a class="ps-btn" (click)="add(_uw.tixPreview)">Agregar al carro</a>
               </div>
             </div>
           </div>
         </div>
-      </form>
+      <!-- </form> -->
     </div>
 <!--     <div id="cart-sticky">
       <div class="form-group--number">

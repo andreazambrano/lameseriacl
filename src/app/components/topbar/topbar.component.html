@@ -4,7 +4,11 @@
           <p><span><i class="pe-7s-call"></i> +56 9 659 99 44</span><span><i class="pe-7s-mail"></i><a href="#"> <span class="__cf_email__" data-cfemail="e6858a879383a682898b878f88c885898b">contacto@lameseria.cl</span></a></span></p>
         </div>
         <div class="header__center">
-          <p>¡Oferta de invierno descuento de<span> 20%!</span><a href="shop-4-column.html"> Compra ahora</a></p>
+          <ul class="ps-list--social">
+                  <!-- <li><a href="index.html#"><i class="fa fa-facebook"></i></a></li> -->
+                  <li><a href="https://www.instagram.com/lameseria.cl/" target="_blank"><i class="fa fa-instagram"></i> @lameseria.cl</a></li>
+                </ul>
+        <!--   <p>¡Oferta de invierno descuento de<span> 20%!</span><a href="shop-4-column.html"> Compra ahora</a></p> -->
         </div>
         <div class="header__right">
           <!-- <div class="ps-dropdown"><a href="index.html#">USD</a>
@@ -20,7 +24,7 @@
         <div class="navigation__center">
           <ul class="menu">
      
-            <li class="menu-item-has-children"><a routerLink="shop">Shop</a><span class="sub-toggle"></span>
+            <li class="menu-item-has-children"><a routerLink="shop">Catalogo</a><span class="sub-toggle"></span>
   
             </li>
    
@@ -29,7 +33,7 @@
         <div class="navigation__right" *ngIf="_uw.numProd !== undefined">
           <div class="header__actions"><a class="ps-search-btn" href="index.html#"><i class="pe-7s-search"></i></a>
        
-            <a class="ps-cart-toggle" href="index.html#"><i class="pe-7s-shopbag"></i><span [hidden]="_uw.numProd<1"><i>{{_uw.numProd}}</i></span></a>
+            <a class="ps-cart-toggle"><i class="pe-7s-shopbag"></i><span [hidden]="_uw.numProd<1"><i>{{_uw.numProd}}</i></span></a>
           </div>
         </div>
       </div>
@@ -40,7 +44,11 @@
           <p><span><i class="pe-7s-call"></i> +56 9 659 99 44</span><span><i class="pe-7s-mail"></i><a href="#"> <span class="__cf_email__" data-cfemail="ddbeb1bca8b89db9b2b0bcb4b3f3beb2b0">[ contacto@lameseria.cl ]</span></a></span></p>
         </div>
         <div class="header__center">
-          <p>¡Oferta de invierno descuento de<span> 20%!</span><a href="shop-4-column.html"> Compra ahora</a></p>
+         <!--  <p>¡Oferta de invierno descuento de<span> 20%!</span><a href="shop-4-column.html"> Compra ahora</a></p> -->
+           <ul class="ps-list--social">
+                  <!-- <li><a href="index.html#"><i class="fa fa-facebook"></i></a></li> -->
+                  <li><a href="https://www.instagram.com/lameseria.cl/" target="_blank"><i class="fa fa-instagram"></i> @lameseria.cl</a></li>
+                </ul>
         </div>
         <div class="header__right">
           <!-- <div class="ps-dropdown"><a href="index.html#">USD</a>
@@ -58,9 +66,9 @@
         </div>
         <div class="navigation__center"><a class="ps-logo" routerLink=""><img src="assets/assetslameseria/img/logo.png" alt=""></a></div>
         <div class="navigation__right">
-          <div class="header__actions"><a class="ps-search-btn" href="index.html#"><i class="pe-7s-search"></i></a>
+          <div class="header__actions"><a class="ps-search-btn" ><i class="pe-7s-search"></i></a>
         
-            <a class="ps-cart-toggle" href="index.html#"><i class="pe-7s-shopbag"></i><span  [hidden]="_uw.numProd<1"><i>{{_uw.numProd}}</i></span></a>
+            <a class="ps-cart-toggle" ><i class="pe-7s-shopbag"></i><span  [hidden]="_uw.numProd<1"><i>{{_uw.numProd}}</i></span></a>
           </div>
         </div>
       </div>
@@ -77,13 +85,13 @@
               <li><a href="index.html#">CLP</a></li>
             </ul>
           </div> -->
-          <div class="header__actions"><a class="ps-search-btn" href="index.html#"><i class="pe-7s-search"></i></a>
+          <div class="header__actions"><a class="ps-search-btn" ><i class="pe-7s-search"></i></a>
         
           </div>
         </div>
         <ul class="menu--mobile">
       
-          <li class="menu-item-has-children"><a class="has-badge" routerLink="shop">Shop</a><span class="sub-toggle"></span>
+          <li class="menu-item-has-children"><a class="has-badge" routerLink="shop">Catalogo</a><span class="sub-toggle"></span>
         
           </li>
        
@@ -92,7 +100,7 @@
     </div>
      <div class="ps-cart--sidebar"> 
       <div class="ps-cart__header">
-        <h3>Mi carrito</h3><a class="ps-btn--close ps-btn--no-boder" href="product-standard.html#"></a>
+        <h3>Mi carrito</h3><a class="ps-btn--close ps-btn--no-boder"  routerLink="cart"></a>
       </div>
       <div class="ps-cart__content">
         <div class="ps-product--cart"  *ngFor="let tix of _uw.car;let i = index">
@@ -106,6 +114,31 @@
         </div> -->
       </div>
       <div class="ps-cart__footer">
-        <h4>SubTotal: <span>CLP {{_uw.subTotal}}</span></h4><a class="ps-btn" routerLink="cart">Ver carrito</a><a class="ps-btn" href="shopping-cart.html">Pagar</a>
+        <h4>SubTotal: <span>CLP {{_uw.subTotal}}</span></h4><a class="ps-btn" routerLink="cart">Ver carrito</a><a class="ps-btn" >Pagar</a>
+      </div>
+    </div>
+       <div class="navigation--sidebar">
+      <div class="navigation__header">
+        <h3>Menu</h3><a class="ps-btn--close ps-btn--no-boder" href="index.html#"></a>
+      </div>
+      <div class="navigation__content">
+        <div class="navigation__actions">
+         <!--  <div class="ps-dropdown"><a href="index.html#">USD</a>
+            <ul class="ps-dropdown-menu">
+              <li><a href="index.html#">USD</a></li>
+              <li><a href="index.html#">CLP</a></li>
+            </ul>
+          </div> -->
+          <div class="header__actions"><a class="ps-search-btn" href="index.html#"><i class="pe-7s-search"></i></a>
+        
+          </div>
+        </div>
+        <ul class="menu--mobile">
+      
+          <li class="menu-item-has-children"><a class="has-badge" routerLink="shop">Catalogo</a><span class="sub-toggle"></span>
+        
+          </li>
+       
+        </ul>
       </div>
     </div>

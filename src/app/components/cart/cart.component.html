@@ -14,14 +14,14 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr *ngFor="let tix of _uw.car">
+                  <tr *ngFor="let tix of _uw.car;let i = index">
                    
                     <td><img src="{{tix.images[0]}}" alt=""><a>{{tix.productName}}</a></td>
                     <td>CLP {{tix.globalPrice}}</td>
                     <td>
                       <div class="form-group--number">
-                        <button class="up"><i class="fa fa-plus"></i></button>
-                        <button class="down"><i class="fa fa-minus"></i></button>
+                        <button class="up" (click)="up(i)"> <i class="fa fa-plus"></i></button>
+                        <button class="down" (click)="down(i)"><i class="fa fa-minus"></i></button>
                         <input class="form-control" type="text" [ngModel]="tix.cantidad" placeholder="1" disabled="true" min="0">
                       </div>
                     </td>
