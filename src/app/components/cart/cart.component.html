@@ -8,7 +8,7 @@
                   <tr>
                     <!-- <th></th> -->
                     <th>Producto</th>
-                    <th>Precio</th>
+                    <!-- <th>Precio</th> -->
                     <th>Cantidad</th>
                     <th>Total</th>
                   </tr>
@@ -16,8 +16,11 @@
                 <tbody>
                   <tr *ngFor="let tix of _uw.car;let i = index">
                    
-                    <td><img src="{{tix.images[0]}}" alt=""><a>{{tix.productName}}</a></td>
-                    <td>CLP {{tix.globalPrice}}</td>
+                    <td>
+                      <a class="ps-btn--close ps-btn--no-boder" style="vertical-align: middle;text-align: left;" (click)="remove(i)" ></a>
+
+                      <img src="{{tix.images[0]}}" alt=""><a>{{tix.productName}}</a></td>
+                    <!-- <td>CLP {{tix.globalPrice}}</td> -->
                     <td>
                       <div class="form-group--number">
                         <button class="up" (click)="up(i)"> <i class="fa fa-plus"></i></button>
@@ -26,8 +29,7 @@
                       </div>
                     </td>
                     <td style="vertical-align: middle;text-align: left;">
-                      {{tix.globalPrice* tix.cantidad}}
-                      <a class="ps-btn--close ps-btn--no-boder" ></a>
+                      {{tix.globalPrice}} CLP x {{tix.cantidad}} = {{tix.globalPrice* tix.cantidad}}
                     </td>
                   </tr>
              

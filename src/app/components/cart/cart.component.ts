@@ -27,7 +27,14 @@ export class CartComponent implements OnInit {
     private formBuilder: FormBuilder
   	) { }
   public tixs:TixInterface;
-
+  remove(i){
+      this._uw.subTotal=this._uw.subTotal-(this._uw.car[i].cantidad*this._uw.car[i].globalPrice);
+      this._uw.car.splice(i, 1);
+      this._uw.numProd=this._uw.numProd-1;
+      if(this._uw.numProd<1){
+        this.router.navigate(['/']);
+      }
+    } 
    public down(index){
       let id=index;
       if(this._uw.car[id].cantidad>1){      
