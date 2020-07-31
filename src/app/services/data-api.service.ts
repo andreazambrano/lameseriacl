@@ -23,10 +23,29 @@ export class DataApiService {
   	private http: HttpClient, 
   	private authService:AuthService
   	) {}
-  	headers : HttpHeaders = new HttpHeaders({
+
+
+//   const httpOptions = {
+//   headers: new HttpHeaders({ 
+//     'Access-Control-Allow-Origin':'*'
+//   })
+// };
+	// headers : HttpHeaders = new HttpHeaders({
+ //  		"Content-Type":"application/json",
+ //  		Authorization: this.authService.getToken()
+ //  		});
+
+	headers : HttpHeaders = new HttpHeaders({
   		"Content-Type":"application/json",
-  		Authorization: this.authService.getToken()
+  		"Access-Control-Allow-Origin":"*"
   		});
+	
+
+  	// headers : HttpHeaders = new HttpHeaders({
+  	// 	"Content-Type":"application/json",
+  	// 	  'Access-Control-Allow-Origin':'*',
+  	// 	Authorization: this.authService.getToken()
+  	// 	});
 	getAllTixs(){
 		const url_api = 'https://db.lameseria.cl:3029/api/tixes?filter[where][status]=activated';
 		return this.http.get(url_api);
@@ -53,7 +72,7 @@ export class DataApiService {
 		.pipe(map(data => data));
 	}
 	sendMailNewBookAppToAdmin(book){
-		const url_api='https://db.andesproadventures.com:3006/newBookAppToAdmin';
+		const url_api='https://db.lameseria.cl:3006/newBookAppToAdmin';
 		return this.http
 		.post(url_api, book)
 		.pipe(map(data => data));
@@ -80,9 +99,17 @@ export class DataApiService {
 		this.tix = this.http.get(url_api);
 		return (this.tix);
 	}
+	sendPay(pay){
+		let amount = pay.amount;
+		const url_api=`http://localhost:9000/index.php?amount=${amount}`;
+		// this.router.navigate(['http://localhost:9000']);
+		return this.http
+		.post(url_api, pay,{headers: this.headers})
+		.pipe(map(data => data));
+	}
 
 		// let indice = id;
-		// const url_api=`https://db.andesproadventures.com:3018/api/book/${indice}`;
+		// const url_api=`https://db.lameseria.cl:3018/api/book/${indice}`;
 		// this.book = this.http.get(url_api);
 		// return (this.book);
 

@@ -32,6 +32,7 @@ export class UserWService {
 	info:any={};
 	isLogged:boolean=false;
 	loaded:boolean=false;
+	methodSeted=false;
 	moccs:boolean=false;
 	name:string;
 	numProd:number=0;
@@ -56,9 +57,11 @@ export class UserWService {
 	totalNew:number=0;
 	totalProducts:number=0;
 	totalTixs:number;
+		transf:boolean=false;
 	type:string;
 	typeGlobal:boolean=false;
 	typeSize:boolean=false;
+	url:string;
 	user:any={};
 	userd:string;
 	usersPending:boolean;
@@ -66,6 +69,7 @@ export class UserWService {
 	validation:any={};
 	validationEmail:any={};
 	validationToDelete:any={};
+	webpay:boolean=false;
 	zapatos:boolean=false;
 	// book:any[]=[];
   constructor() { }

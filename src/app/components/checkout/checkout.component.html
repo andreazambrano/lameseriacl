@@ -5,104 +5,121 @@
             <div class="row">
               <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 ">
                 <form class="ps-form--checkout" action="http://nouthemes.net/html/claue/do_action" method="post">
-                  <h3 class="ps-checkout__heading">BILLING DETAILS</h3>
+                  <h3 class="ps-checkout__heading">Detalles de envio</h3>
                   <div class="row">
                     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 ">
                       <div class="form-group">
-                        <label>Fist Name <sup>*</sup></label>
+                        <label>Nombres <sup>*</sup></label>
                         <input class="form-control" type="text" placeholder="">
                       </div>
                     </div>
                     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 ">
                       <div class="form-group">
-                        <label>Last Name <sup>*</sup></label>
+                        <label>Apellidos <sup>*</sup></label>
                         <input class="form-control" type="text" placeholder="">
                       </div>
                     </div>
                   </div>
                   <div class="form-group">
-                    <label>Company name (optional)</label>
+                    <label>Nombre de la compañía (opcional)</label>
                     <input class="form-control" type="text" placeholder="">
                   </div>
                   <div class="form-group">
-                    <label>Country</label>
+                    <label>Provincia</label>
                     <select class="form-control">
-                      <option value="1">USA</option>
-                      <option value="1">Singapore</option>
+                      <option value="1">Santiago</option>
+                      <option value="1">Otra</option>
                     </select>
                   </div>
                   <div class="form-group">
-                    <label>Street Address <sup>*</sup></label>
+                    <label>Dirección <sup>*</sup></label>
                     <input class="form-control" type="text" placeholder="">
                   </div>
                   <div class="form-group">
-                    <label>Town / City <sup>*</sup></label>
+                    <label>Ciudad <sup>*</sup></label>
                     <input class="form-control" type="text" placeholder="">
                   </div>
                   <div class="form-group">
-                    <label>Phone <sup>*</sup></label>
+                    <label>Telefono <sup>*</sup></label>
                     <input class="form-control" type="text" placeholder="">
                   </div>
                   <div class="form-group">
-                    <label>Email address <sup>*</sup></label>
+                    <label>Email <sup>*</sup></label>
                     <input class="form-control" type="email" placeholder="">
                   </div>
                   <div class="form-group">
                     <div class="ps-checkbox">
                       <input class="form-control" type="checkbox" id="create" name="create"/>
-                      <label for="create">Create an account?</label>
+                      <label for="create">Crear cuenta?</label>
                     </div>
                   </div>
                   <div class="form-group">
-                    <label>Order notes (optional)</label>
+                    <label>Notas (opcional)</label>
                     <textarea class="form-control" rows="5" placeholder=""></textarea>
                   </div>
                 </form>
               </div>
               <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 ">
-                <h3 class="ps-checkout__heading">YOUR ORDER</h3>
+                <h3 class="ps-checkout__heading">Su Pedido</h3>
                 <div class="table-responsive">
                   <table class="table ps-table ps-table--checkout">
                     <tbody>
                       <tr>
-                        <td><strong>Product</strong></td>
+                        <td><strong>Producto</strong></td>
                         <td><strong>Total</strong></td>
                       </tr>
-                      <tr>
-                        <td><a href="checkout.html#"><img src="img/product/best-2-1.jpg" alt=""></a>
-                          <p> Cyan Boheme - Cyan, M 	× 1</p>
+                      <tr  *ngFor="let tix of _uw.car;let i = index">
+                        <td><a ><img src="{{tix.images[0]}}" alt=""></a>
+                          <p> {{tix.productName}}	× {{tix.cantidad}} </p>
                         </td>
-                        <td>$45.00</td>
+                        <td>CLP {{tix.globalPrice* tix.cantidad}}</td>
                       </tr>
                       <tr>
                         <td><strong>Subtotal</strong></td>
-                        <td>$45.00</td>
+                        <td>CLP {{_uw.subTotal}}</td>
                       </tr>
                       <tr>
                         <td><strong>Shipping</strong></td>
-                        <td>Local Pickup: $15.00</td>
+                        <td>Local Pickup: CLP 0.00</td>
                       </tr>
                       <tr class="total">
                         <td><strong>Total</strong></td>
-                        <td>$60.00</td>
+                        <td>CLP 0.00</td>
                       </tr>
                     </tbody>
                   </table>
                 </div>
                 <div class="ps-checkout__payment-menthod">
                   <div class="ps-radio">
-                    <input class="form-control" type="radio" id="payment-method-1" name="payment-menthod"/>
-                    <label for="payment-method-1">Check payments</label>
+                    <input class="form-control" type="radio" id="payment-method-1" name="payment-menthod" (click)="setTransf()"/>
+                    <label for="payment-method-1">Transferencia Bancaria</label>
+                    <div  [hidden]="_uw.webpay || !_uw.methodSeted">
+                      <p>ICS servicios profesionales
+                        <br/>
+                        76 899 155 - 3
+                        <br/>
+                        Banco Santander Cta. corriente #
+                        <br/>
+                        737 34 975
+                        <br/>
+                        Email: lameseria.cl@gmail.com
+                      </p>
+                        <form  ngNoForm1  [action]="this._uw.url" method="POST" [hidden]="_uw.webpay || !_uw.methodSeted">
+                  <button class="ps-btn ps-btn--outline ps-btn--black">Procesar pago</button>
+                </form>
+                    </div>
                   </div>
-                  <div class="ps-radio">
+                  <!-- <div class="ps-radio">
                     <input class="form-control" type="radio" id="payment-method-2" name="payment-menthod"/>
                     <label for="payment-method-2">Cash on delivery</label>
-                  </div>
+                  </div> -->
                   <div class="ps-radio">
-                    <input class="form-control" type="radio" id="payment-method-3" name="payment-menthod">
-                    <label for="payment-method-3">Visa <img src="img/visa.jpg" alt=""></label>
+                    <input class="form-control" type="radio" id="payment-method-3" name="payment-menthod" (click)="setWebpay()">
+                    <label for="payment-method-3">Pago en línea (Webpay) <img src="img/visa.jpg" alt=""></label>
                   </div>
-                  <button class="ps-btn ps-btn--outline ps-btn--black">Place order</button>
+                  <form  ngNoForm  [action]="this._uw.url" method="POST" [hidden]="_uw.transf || !_uw.methodSeted">
+                  <button class="ps-btn ps-btn--outline ps-btn--black">Conectar con Transbank</button>
+                </form>
                 </div>
               </div>
             </div>

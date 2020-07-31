@@ -3,6 +3,7 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { CarouselModule } from 'ngx-owl-carousel-o';
+// import { Transbank } from 'transbank-sdk';
 import { ArchwizardModule } from 'angular-archwizard';
 import { HttpClientModule } from '@angular/common/http';
 //RUTAS
@@ -56,6 +57,7 @@ import { CartComponent } from './components/cart/cart.component';
 import { AccountComponent } from './components/account/account.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
 import { BannerComponent } from './components/banner/banner.component';
+import { InstagramComponent } from './components/instagram/instagram.component';
 
 @NgModule({
   declarations: [
@@ -77,6 +79,7 @@ import { BannerComponent } from './components/banner/banner.component';
     AccountComponent,
     CheckoutComponent,
     BannerComponent,
+    InstagramComponent,
   ],
   imports: [
     BrowserModule,

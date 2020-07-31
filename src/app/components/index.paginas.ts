@@ -14,3 +14,4 @@ export { CheckoutComponent } from "./checkout/checkout.component";
 export { AccountComponent } from "./account/account.component";
 export { CartComponent } from "./cart/cart.component";
 export { PagoComponent } from "./pago/pago.component";
+export { InstagramComponent } from "./instagram/instagram.component";

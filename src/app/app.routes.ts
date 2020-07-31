@@ -15,7 +15,8 @@ import {
 	CartComponent,
 	AccountComponent,
 	CheckoutComponent,
-	PagoComponent
+	PagoComponent,
+	InstagramComponent
 
 	}from "./components/index.paginas";
 
@@ -38,6 +39,7 @@ const app_routes: Routes = [
 	// {path:'fruitcart',component:FruitcartComponent},
 	{path:'footer',component:FooterComponent},
 	{path:'pago',component:PagoComponent},
+	{path:'instagram',component:InstagramComponent},
 	{path:'**',pathMatch:'full',redirectTo:''}
 	];
 	export const app_routing = RouterModule.forRoot(app_routes);
