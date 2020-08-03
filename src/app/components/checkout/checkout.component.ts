@@ -25,6 +25,11 @@ export class CheckoutComponent implements OnInit {
     private route:ActivatedRoute,
     private formBuilder: FormBuilder
   	) { }
+ public aleatorio(a,b) {
+    return Math.round(Math.random()*(b-a)+parseInt(a));
+  }
+
+  
  public pay : PagoInterface ={
         pagoImage:[],
       npedido:""
