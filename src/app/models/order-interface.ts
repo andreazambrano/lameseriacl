@@ -1,10 +1,18 @@
 export interface OrderInterface {
+	address?:string;
+	city?:string;
 	car?:Array<string>;	
+	companyName?:string;
 	email?:string;
 	direccion?:string;
 	id?:string;
+	lastName?:string;
 	metodo?:string;
+	name?:string;
+	notes?:string;
 	personaContacto?:string;
+	phone?:string;
+	provincia?:string;
 	status?:string;
 	telefono?:string;
 	total?:number;

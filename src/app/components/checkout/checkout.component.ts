@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PagoInterface } from '../../models/pago-interface'; 
+import { OrderInterface } from '../../models/order-interface'; 
 import { UserWService } from "../../services/user-w.service";
 import { DataApiService} from '../../services/data-api.service';
 import { Location } from '@angular/common';
@@ -15,7 +16,8 @@ import { ScrollTopService }  from '../../services/scroll-top.service';
   styleUrls: ['./checkout.component.css']
 })
 export class CheckoutComponent implements OnInit {
-
+ ngFormCheckout: FormGroup;
+   submitted = false;
   constructor(
   	 	public _uw:UserWService,
   	private dataApi: DataApiService,
@@ -29,11 +31,38 @@ export class CheckoutComponent implements OnInit {
     return Math.round(Math.random()*(b-a)+parseInt(a));
   }
 
-  
+  public order : OrderInterface={
+      name:"",
+      lastName:"",
+      companyName:"",
+      provincia:"",
+      address:"",
+      city:"",
+      // check:[],
+      phone:"",
+      email:"",
+      // globalPrice:0,
+      // images:[],
+      notes:""
+      // presentacion:"",
+      // new:true,
+      // status:"",
+      // tallas:[],
+      // typePrice:"global",
+      // weight:""
+    };
  public pay : PagoInterface ={
         pagoImage:[],
       npedido:""
     };
+
+    public sendCheckout(){
+         this.order = this.ngFormCheckout.value;
+               this.dataApi.saveOrder(this.order)
+        .subscribe(
+        );
+
+    }
 
     public setTransf(){
     	this._uw.transf=true;
@@ -54,7 +83,24 @@ export class CheckoutComponent implements OnInit {
       // this.router.navigate(['http://localhost:9000']);
 
     }
+
+
+ get fval() {
+  return this.ngFormCheckout.controls;
+  }
   ngOnInit() {
+    this.ngFormCheckout = this.formBuilder.group({
+      name: ['', [Validators.required]],
+      lastName: ['', [Validators.required]],
+      companyName: ['', [Validators.required]],
+      // provincia:['', [Validators.required]],
+      address: ['',[Validators.required]],
+      city: ['',[Validators.required]],
+      phone: ['',[Validators.required]],
+      email: ['',[Validators.required]],
+      notes: ['',[Validators.required]]
+      });
+
   	this._uw.methodSeted=false;
   }
 
