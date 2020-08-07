@@ -80,9 +80,9 @@
         </ul>
       </div>
     </div>
-     <div class="ps-cart--sidebar"> 
+     <div class="ps-cart--sidebar" [hidden]="router.url.includes('/cart')"> 
       <div class="ps-cart__header">
-        <h3>Mi carrito</h3><a class="ps-btn--close ps-btn--no-boder"  routerLink="cart"></a>
+        <h3>Mi carrito</h3><a class="ps-btn--close ps-btn--no-boder"  ></a>
       </div>
       <div class="ps-cart__content">
         <div class="ps-product--cart"  *ngFor="let tix of _uw.car;let i = index">

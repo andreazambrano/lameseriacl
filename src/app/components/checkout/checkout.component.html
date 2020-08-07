@@ -157,7 +157,7 @@
                         Email: lameseria.cl@gmail.com
                       </p>
                         <form  ngNoForm1  [action]="this._uw.url" method="POST" [hidden]="_uw.webpay || !_uw.methodSeted">
-                  <button class="ps-btn ps-btn--outline ps-btn--black" (click)="sendCheckout()">Procesar pago</button>
+                  <button class="ps-btn ps-btn--outline ps-btn--black" >Procesar pago</button>
                 </form>
                     </div>
                   </div>
@@ -169,9 +169,12 @@
                     <input class="form-control" type="radio" id="payment-method-3" name="payment-menthod" (click)="setWebpay()">
                     <label for="payment-method-3">Pago en línea (Webpay) <img src="img/visa.jpg" alt=""></label>
                   </div>
-                  <form  ngNoForm  [action]="this._uw.url" method="POST" [hidden]="_uw.transf || !_uw.methodSeted">
-                  <button class="ps-btn ps-btn--outline ps-btn--black">Conectar con Transbank</button>
+                  <form  ngNoForm  [hidden]="_uw.transf || !_uw.methodSeted">
+                  <button class="ps-btn ps-btn--outline ps-btn--black" (click)="sendCheckout()">Conectar con Transbank</button>
                 </form>
+        <!--         <form  ngNoForm  [action]="this._uw.url" method="POST" [hidden]="_uw.transf || !_uw.methodSeted">
+                  <button class="ps-btn ps-btn--outline ps-btn--black" (click)="sendCheckout()">Conectar con Transbank</button>
+                </form> -->
                 </div>
               </div>
             </div>

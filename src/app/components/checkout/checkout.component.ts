@@ -32,6 +32,7 @@ export class CheckoutComponent implements OnInit {
   }
 
   public order : OrderInterface={
+    amount:0,
       name:"",
       lastName:"",
       companyName:"",
@@ -57,10 +58,20 @@ export class CheckoutComponent implements OnInit {
     };
 
     public sendCheckout(){
+
+      
          this.order = this.ngFormCheckout.value;
+         this.order.amount=this._uw.subTotal;
+
+
+
                this.dataApi.saveOrder(this.order)
         .subscribe(
         );
+      //      this.dataApi.sendPay(this.order).subscribe(
+      // );
+      let amount = this._uw.subTotal;
+      this.router.navigate(['http://localhost:9000/index.php?amount=${amount}']);
 
     }
 
