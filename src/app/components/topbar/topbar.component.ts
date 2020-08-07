@@ -16,7 +16,7 @@ export class TopbarComponent implements OnInit {
   constructor(
  public _uw:UserWService,
  	private location: Location,
-    private router: Router, 
+    public router: Router, 
   private dataApi: DataApiService
   	) { }
 

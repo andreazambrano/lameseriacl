@@ -40,6 +40,7 @@ export class CheckoutComponent implements OnInit {
       provincia:"",
       address:"",
       city:"",
+      car:[],
       // check:[],
       phone:"",
       email:"",
@@ -64,7 +65,7 @@ export class CheckoutComponent implements OnInit {
          this.order = this.ngFormCheckout.value;
          this.order.amount=this._uw.subTotal;
          this.order.idOrder=this.aleatorio(10000,99999);
-
+         this.order.car=this._uw.car;
 
 
                this.dataApi.saveOrder(this.order)

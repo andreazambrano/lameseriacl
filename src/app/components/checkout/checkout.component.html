@@ -1,171 +1,168 @@
 <div class="ps-page">
       <div class="ps-page__content">
         <div class="container">
-          <div class="ps-checkout">
-            <div class="row">
-              <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 ">
-                <form class="ps-form--checkout"  class=""[formGroup]="ngFormCheckout" (ngSubmit) ="sendCheckout()">
-                  <h3 class="ps-checkout__heading">Detalles de envio</h3>
-                  <div class="row">
-                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 ">
-               
-                      <div class="form-group">
-                        <label>Nombres <sup>*</sup></label>
-                          <input type="text" class="form-control" id="name" formControlName="name" placeholder="Nombres" [(ngModel)]="order.name"
-                          [ngClass]="{ 'is-invalid': submitted && fval.name.errors }"
-                          required><span class="required"></span>
-                          <div *ngIf="submitted && fval.name.errors" class="invalid-feedback">
-                            <div *ngIf="fval.name.errors.required" class="errorLabel">
-                            * El nombre es requerido.
-                            </div>
-                          </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 ">
-                      <div class="form-group">
-                        <label>Apellidos <sup>*</sup></label>
-                        <input type="text" class="form-control" id="lastName" formControlName="lastName" placeholder="Apellidos" [(ngModel)]="order.lastName"
-                          [ngClass]="{ 'is-invalid': submitted && fval.lastName.errors }"
-                          required><span class="required"></span>
-                          <div *ngIf="submitted && fval.lastName.errors" class="invalid-feedback">
-                            <div *ngIf="fval.lastName.errors.required" class="errorLabel">
-                            * El apellido es requerido.
+          <form class="ps-form--checkout"  class=""[formGroup]="ngFormCheckout" (ngSubmit) ="sendCheckout()">
+            <div class="ps-checkout">
+              <div class="row">
+              
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 ">
+                    <h3 class="ps-checkout__heading">Detalles de envio</h3>
+                    <div class="row">
+                      <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 ">
+                        <div class="form-group">
+                          <label>Nombres <sup>*</sup></label>
+                            <input type="text" class="form-control" id="name" formControlName="name" placeholder="Nombres" [(ngModel)]="order.name"
+                            [ngClass]="{ 'is-invalid': submitted && fval.name.errors }"
+                            required><span class="required"></span>
+                            <div *ngIf="submitted && fval.name.errors" class="invalid-feedback">
+                              <div *ngIf="fval.name.errors.required" class="errorLabel">
+                              * El nombre es requerido.
+                              </div>
                             </div>
                           </div>
                       </div>
+                      <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 ">
+                        <div class="form-group">
+                          <label>Apellidos <sup>*</sup></label>
+                          <input type="text" class="form-control" id="lastName" formControlName="lastName" placeholder="Apellidos" [(ngModel)]="order.lastName"
+                            [ngClass]="{ 'is-invalid': submitted && fval.lastName.errors }"
+                            required><span class="required"></span>
+                            <div *ngIf="submitted && fval.lastName.errors" class="invalid-feedback">
+                              <div *ngIf="fval.lastName.errors.required" class="errorLabel">
+                              * El apellido es requerido.
+                              </div>
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label>Nombre de la compañía (opcional)</label>
+                     <!--  <input class="form-control" type="text" placeholder=""> -->
+                      <input type="text" class="form-control" id="companyName" formControlName="companyName" placeholder="Nombre de la compañia" [(ngModel)]="order.companyName">
+                    </div>
+                    <div class="form-group">
+                      <label>Provincia</label>
+                      <select class="form-control">
+                        <option value="1">Santiago</option>
+                        <option value="1">Otra</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label>Dirección <sup>*</sup></label>
+                       <input type="text" class="form-control" id="address" formControlName="address" placeholder="Dirección" [(ngModel)]="order.address"
+                            [ngClass]="{ 'is-invalid': submitted && fval.address.errors }"
+                            required><span class="required"></span>
+                            <div *ngIf="submitted && fval.address.errors" class="invalid-feedback">
+                              <div *ngIf="fval.address.errors.required" class="errorLabel">
+                              * La dirección es requerida.
+                              </div>
+                            </div>
+                    </div>
+                    <div class="form-group">
+                      <label>Ciudad <sup>*</sup></label>
+                       <input type="text" class="form-control" id="city" formControlName="city" placeholder="Ciudad" [(ngModel)]="order.city"
+                            [ngClass]="{ 'is-invalid': submitted && fval.city.errors }"
+                            required><span class="required"></span>
+                            <div *ngIf="submitted && fval.city.errors" class="invalid-feedback">
+                              <div *ngIf="fval.city.errors.required" class="errorLabel">
+                              * Campo requerido.
+                              </div>
+                            </div>
+                    </div>
+                    <div class="form-group">
+                      <label>Telefono <sup>*</sup></label>
+                       <input type="text" class="form-control" id="phone" formControlName="phone" placeholder="Teléfono" [(ngModel)]="order.phone"
+                            [ngClass]="{ 'is-invalid': submitted && fval.phone.errors }"
+                            required><span class="required"></span>
+                            <div *ngIf="submitted && fval.phone.errors" class="invalid-feedback">
+                              <div *ngIf="fval.phone.errors.required" class="errorLabel">
+                              * El telefono es requerido.
+                              </div>
+                            </div>
+                    </div>
+                    <div class="form-group">
+                      <label>Email <sup>*</sup></label>
+                      <input type="email" class="form-control" id="email" placeholder="Email" formControlName="email" [(ngModel)]="order.email"required [ngClass]="{ 'is-invalid': submitted && fval.email.errors }">
+                    <div *ngIf="submitted && fval.email.errors" class="invalid-feedback">
+                    <div *ngIf="fval.email.errors.required">* El email es requerido</div>
+                    <div *ngIf="fval.email.errors.email">Ingrese una dirección de email válida</div>
+                    </div>
+                    </div>
+                    <div class="form-group">
+                      <div class="ps-checkbox">
+                        <input class="form-control" type="checkbox" id="create" name="create"/>
+                        <label for="create">Crear cuenta?</label>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label>Notas (opcional)</label>
+                         <input type="text" class="form-control" id="notes" formControlName="notes" placeholder="Notas" [(ngModel)]="order.notes"
+                            [ngClass]="{ 'is-invalid': submitted && fval.notes.errors }"
+                            required>
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 ">
+                  <h3 class="ps-checkout__heading">Su Pedido</h3>
+                  <div class="table-responsive">
+                    <table class="table ps-table ps-table--checkout">
+                      <tbody>
+                        <tr>
+                          <td><strong>Producto</strong></td>
+                          <td><strong>Total</strong></td>
+                        </tr>
+                        <tr  *ngFor="let tix of _uw.car;let i = index">
+                          <td><a ><img src="{{tix.images[0]}}" alt=""></a>
+                            <p> {{tix.productName}} × {{tix.cantidad}} </p>
+                          </td>
+                          <td>CLP {{tix.globalPrice* tix.cantidad}}</td>
+                        </tr>
+                        <tr>
+                          <td><strong>Subtotal</strong></td>
+                          <td>CLP {{_uw.subTotal}}</td>
+                        </tr>
+                        <tr>
+                          <td><strong>Shipping</strong></td>
+                          <td>Local Pickup: CLP 0.00</td>
+                        </tr>
+                        <tr class="total">
+                          <td><strong>Total</strong></td>
+                          <td>CLP 0.00</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="ps-checkout__payment-menthod">
+                    <div class="ps-radio">
+                      <input class="form-control" type="radio" id="payment-method-1" name="payment-menthod" (click)="setTransf()"/>
+                      <label for="payment-method-1">Transferencia Bancaria</label>
+                      <div  [hidden]="_uw.webpay || !_uw.methodSeted">
+                        <p>ICS servicios profesionales
+                          <br/>
+                          76 899 155 - 3
+                          <br/>
+                          Banco Santander Cta. corriente #
+                          <br/>
+                          737 34 975
+                          <br/>
+                          Email: lameseria.cl@gmail.com
+                        </p>
+                        <div>
+                          <button class="ps-btn ps-btn--outline ps-btn--black" type="submit">Procesar pago</button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="ps-radio">
+                      <input class="form-control" type="radio" id="payment-method-3" name="payment-menthod" (click)="setWebpay()">
+                      <label for="payment-method-3">Pago en línea (Webpay) <img src="img/visa.jpg" alt=""></label>
+                    </div>
+                    <div>
+                      <button class="ps-btn ps-btn--outline ps-btn--black" type="submit">Conectar con Transbank</button>
                     </div>
                   </div>
-                  <div class="form-group">
-                    <label>Nombre de la compañía (opcional)</label>
-                   <!--  <input class="form-control" type="text" placeholder=""> -->
-                    <input type="text" class="form-control" id="companyName" formControlName="companyName" placeholder="Nombre de la compañia" [(ngModel)]="order.companyName">
-                  </div>
-                  <div class="form-group">
-                    <label>Provincia</label>
-                    <select class="form-control">
-                      <option value="1">Santiago</option>
-                      <option value="1">Otra</option>
-                    </select>
-                  </div>
-                  <div class="form-group">
-                    <label>Dirección <sup>*</sup></label>
-                     <input type="text" class="form-control" id="address" formControlName="address" placeholder="Dirección" [(ngModel)]="order.address"
-                          [ngClass]="{ 'is-invalid': submitted && fval.address.errors }"
-                          required><span class="required"></span>
-                          <div *ngIf="submitted && fval.address.errors" class="invalid-feedback">
-                            <div *ngIf="fval.address.errors.required" class="errorLabel">
-                            * La dirección es requerida.
-                            </div>
-                          </div>
-                  </div>
-                  <div class="form-group">
-                    <label>Ciudad <sup>*</sup></label>
-                     <input type="text" class="form-control" id="city" formControlName="city" placeholder="Ciudad" [(ngModel)]="order.city"
-                          [ngClass]="{ 'is-invalid': submitted && fval.city.errors }"
-                          required><span class="required"></span>
-                          <div *ngIf="submitted && fval.city.errors" class="invalid-feedback">
-                            <div *ngIf="fval.city.errors.required" class="errorLabel">
-                            * Campo requerido.
-                            </div>
-                          </div>
-                  </div>
-                  <div class="form-group">
-                    <label>Telefono <sup>*</sup></label>
-                     <input type="text" class="form-control" id="phone" formControlName="phone" placeholder="Teléfono" [(ngModel)]="order.phone"
-                          [ngClass]="{ 'is-invalid': submitted && fval.phone.errors }"
-                          required><span class="required"></span>
-                          <div *ngIf="submitted && fval.phone.errors" class="invalid-feedback">
-                            <div *ngIf="fval.phone.errors.required" class="errorLabel">
-                            * El telefono es requerido.
-                            </div>
-                          </div>
-                  </div>
-                  <div class="form-group">
-                    <label>Email <sup>*</sup></label>
-                    <input type="email" class="form-control" id="email" placeholder="Email" formControlName="email" [(ngModel)]="order.email"required [ngClass]="{ 'is-invalid': submitted && fval.email.errors }">
-                  <div *ngIf="submitted && fval.email.errors" class="invalid-feedback">
-                  <div *ngIf="fval.email.errors.required">* El email es requerido</div>
-                  <div *ngIf="fval.email.errors.email">Ingrese una dirección de email válida</div>
-                  </div>
-                  </div>
-                  <div class="form-group">
-                    <div class="ps-checkbox">
-                      <input class="form-control" type="checkbox" id="create" name="create"/>
-                      <label for="create">Crear cuenta?</label>
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <label>Notas (opcional)</label>
-                       <input type="text" class="form-control" id="notes" formControlName="notes" placeholder="Notas" [(ngModel)]="order.notes"
-                          [ngClass]="{ 'is-invalid': submitted && fval.notes.errors }"
-                          required>
-                  </div>
-                </form>
-              </div>
-              <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 ">
-                <h3 class="ps-checkout__heading">Su Pedido</h3>
-                <div class="table-responsive">
-                  <table class="table ps-table ps-table--checkout">
-                    <tbody>
-                      <tr>
-                        <td><strong>Producto</strong></td>
-                        <td><strong>Total</strong></td>
-                      </tr>
-                      <tr  *ngFor="let tix of _uw.car;let i = index">
-                        <td><a ><img src="{{tix.images[0]}}" alt=""></a>
-                          <p> {{tix.productName}}	× {{tix.cantidad}} </p>
-                        </td>
-                        <td>CLP {{tix.globalPrice* tix.cantidad}}</td>
-                      </tr>
-                      <tr>
-                        <td><strong>Subtotal</strong></td>
-                        <td>CLP {{_uw.subTotal}}</td>
-                      </tr>
-                      <tr>
-                        <td><strong>Shipping</strong></td>
-                        <td>Local Pickup: CLP 0.00</td>
-                      </tr>
-                      <tr class="total">
-                        <td><strong>Total</strong></td>
-                        <td>CLP 0.00</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-                <div class="ps-checkout__payment-menthod">
-                  <div class="ps-radio">
-                    <input class="form-control" type="radio" id="payment-method-1" name="payment-menthod" (click)="setTransf()"/>
-                    <label for="payment-method-1">Transferencia Bancaria</label>
-                    <div  [hidden]="_uw.webpay || !_uw.methodSeted">
-                      <p>ICS servicios profesionales
-                        <br/>
-                        76 899 155 - 3
-                        <br/>
-                        Banco Santander Cta. corriente #
-                        <br/>
-                        737 34 975
-                        <br/>
-                        Email: lameseria.cl@gmail.com
-                      </p>
-                       
-                <div>
-                  <button class="ps-btn ps-btn--outline ps-btn--black" >Procesar pago</button>
-                </div>
-                    </div>
-                  </div>
-                 
-                  <div class="ps-radio">
-                    <input class="form-control" type="radio" id="payment-method-3" name="payment-menthod" (click)="setWebpay()">
-                    <label for="payment-method-3">Pago en línea (Webpay) <img src="img/visa.jpg" alt=""></label>
-                  </div>
-                  <div>
-                  <button class="ps-btn ps-btn--outline ps-btn--black" (click)="sendCheckout()">Conectar con Transbank</button>
-                </div>
-        
                 </div>
               </div>
             </div>
-          </div>
+          </form>
         </div>
       </div>
     </div>

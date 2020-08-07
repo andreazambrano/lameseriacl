@@ -2,7 +2,7 @@ export interface OrderInterface {
 	address?:string;
 	amount?:number;
 	city?:string;
-	car?:Array<string>;	
+	car?:Array<any>;	
 	companyName?:string;
 	email?:string;
 	direccion?:string;
