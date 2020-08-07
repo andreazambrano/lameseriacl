@@ -33,6 +33,7 @@ export class CheckoutComponent implements OnInit {
 
   public order : OrderInterface={
     amount:0,
+    idOrder:0,
       name:"",
       lastName:"",
       companyName:"",
@@ -62,6 +63,7 @@ export class CheckoutComponent implements OnInit {
       
          this.order = this.ngFormCheckout.value;
          this.order.amount=this._uw.subTotal;
+         this.order.idOrder=this.aleatorio(10000,99999);
 
 
 

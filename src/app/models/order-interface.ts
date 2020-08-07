@@ -20,4 +20,5 @@ export interface OrderInterface {
 	npedido?:string;
 	steeps?:Array<any>;	
 	pagoImage?:Array<string>;
+	idOrder?:number;
 }
